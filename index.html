@@ -17,13 +17,11 @@
   <!-- Tailwind (CDN) -->
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* Subtle background */
     body {
       background-image:
         radial-gradient(1200px 600px at 10% -10%, rgba(14,165,233,0.12), transparent),
         radial-gradient(1000px 500px at 110% 10%, rgba(99,102,241,0.12), transparent);
     }
-    /* Helpers for Featured Startups cards */
     .card-hover { transition: transform .2s ease, box-shadow .2s ease; }
     .card-hover:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(2,6,23,0.08); }
     .text-gradient {
@@ -47,8 +45,8 @@
         <a href="#services" class="hover:text-slate-900 text-slate-600">Services</a>
         <a href="#speaking" class="hover:text-slate-900 text-slate-600">Speaking</a>
         <a href="#packages" class="hover:text-slate-900 text-slate-600">Packages</a>
-        <a href="#events" class="hover:text-slate-900 text-slate-600">Events</a>
-        <a href="#startups" class="hover:text-slate-900 text-slate-600">Startups</a>
+        <a href="#partnership" class="hover:text-slate-900 text-slate-600">Partnering</a>
+        <a href="#projects" class="hover:text-slate-900 text-slate-600">Projects</a>
         <a href="#faq" class="hover:text-slate-900 text-slate-600">FAQ</a>
         <a href="#contact" class="hover:text-slate-900 text-slate-600">Contact</a>
         <a href="https://calendar.app.google/5hsvLPKmr5MoQSKUA" class="bg-slate-900 text-white px-4 py-2 rounded-xl hover:bg-slate-800">Book</a>
@@ -58,66 +56,62 @@
   </header>
 
   <!-- Hero -->
-<section class="mx-auto max-w-6xl px-4 pt-12 pb-10">
-  <div class="grid md:grid-cols-2 gap-10 items-center">
-    <div>
-      <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">
-        Software Startup Coach <span class="text-slate-400">&</span> <span class="text-sky-600">Motivational Speaker</span>
-      </h1>
-      <p class="mt-5 text-lg text-slate-600">
-        I help founders go from idea to launched software product. We’ll crystallise your strategy, form the right team, run a focused MVP sprint, and ship — using AI to speed up everything.
-      </p>
-      <div class="mt-6 flex flex-wrap gap-3">
-        <a href="https://calendar.app.google/5hsvLPKmr5MoQSKUA" class="px-5 py-3 bg-sky-600 text-white rounded-xl hover:bg-sky-700">Free 20-min Discovery Call</a>
-        <a href="#speaking" class="px-5 py-3 border border-slate-300 rounded-xl hover:bg-white">Book a Talk</a>
+  <section class="mx-auto max-w-6xl px-4 pt-12 pb-10">
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">
+          Software Startup Coach <span class="text-slate-400">&</span> <span class="text-sky-600">Motivational Speaker</span>
+        </h1>
+        <p class="mt-5 text-lg text-slate-600">
+          I help founders go from idea to launched software product. We’ll crystallise your strategy, form the right team, run a focused MVP sprint, and ship — using AI to speed up everything.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="https://calendar.app.google/5hsvLPKmr5MoQSKUA" class="px-5 py-3 bg-sky-600 text-white rounded-xl hover:bg-sky-700">Free 20-min Discovery Call</a>
+          <a href="#speaking" class="px-5 py-3 border border-slate-300 rounded-xl hover:bg-white">Book a Talk</a>
+        </div>
+        <p class="mt-3 text-sm text-slate-500">Specialised in <strong>software products only</strong> — web, mobile, SaaS.</p>
       </div>
-      <p class="mt-3 text-sm text-slate-500">Specialised in <strong>software products only</strong> — web, mobile, SaaS.</p>
-    </div>
 
-    <!-- Right column: headshot + value card -->
-    <div class="md:justify-self-end flex flex-col items-center gap-6">
-      <!-- Headshot -->
-      <a href="https://www.linkedin.com/in/sergeivo/" target="_blank" rel="noopener" aria-label="Serge Ivo on LinkedIn">
-        <figure class="relative">
-          <!-- Soft gradient glow -->
-          <span aria-hidden="true" class="absolute inset-0 rounded-full bg-gradient-to-tr from-sky-500/25 to-violet-600/25 blur-xl"></span>
-          <img
-            src="images/serge-ivo.jpg"
-            alt="Serge Ivo — Software Startup Coach & Motivational Speaker"
-            width="320" height="320"
-            class="relative w-40 h-40 md:w-56 md:h-56 rounded-full object-cover ring-4 ring-white shadow-xl"
-            loading="eager" decoding="async"
-          />
-        </figure>
-      </a>
+      <!-- Right column: headshot + value card -->
+      <div class="md:justify-self-end flex flex-col items-center gap-6">
+        <!-- Headshot -->
+        <a href="https://www.linkedin.com/in/sergeivo/" target="_blank" rel="noopener" aria-label="Serge Ivo on LinkedIn">
+          <figure class="relative">
+            <span aria-hidden="true" class="absolute inset-0 rounded-full bg-gradient-to-tr from-sky-500/25 to-violet-600/25 blur-xl"></span>
+            <img
+              src="images/serge-ivo.jpg"
+              alt="Serge Ivo — Software Startup Coach & Motivational Speaker"
+              width="320" height="320"
+              class="relative w-40 h-40 md:w-56 md:h-56 rounded-full object-cover ring-4 ring-white shadow-xl"
+              loading="eager" decoding="async"
+            />
+          </figure>
+        </a>
 
-      <!-- What you get card -->
-      <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm w-full">
-        <h3 class="font-semibold">What you get</h3>
-        <ul class="mt-3 space-y-2 text-slate-600">
-          <li>• AI-assisted product strategy & de-risking</li>
-          <li>• Team formation playbook (volunteers, contractors, or hybrid)</li>
-          <li>• 2–4 week MVP sprint: scope, build, demo, iterate</li>
-          <li>• Launch stack: landing, onboarding, feedback loops</li>
-          <li>• GTM & traction experiments that fit your stage</li>
-        </ul>
+        <!-- What you get card -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm w-full">
+          <h3 class="font-semibold">What you get</h3>
+          <ul class="mt-3 space-y-2 text-slate-600">
+            <li>• AI-assisted product strategy & de-risking</li>
+            <li>• Team formation playbook (volunteers, contractors, or hybrid)</li>
+            <li>• 2–4 week MVP sprint: scope, build, demo, iterate</li>
+            <li>• Launch stack: landing, onboarding, feedback loops</li>
+            <li>• GTM & traction experiments that fit your stage</li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-
-  <!-- AI Double-Edged Sword Banner -->
+  <!-- AI Banner -->
   <section id="events" class="mx-auto max-w-6xl px-4">
     <div class="rounded-2xl border border-sky-200 bg-sky-50 p-6">
       <h2 class="text-xl md:text-2xl font-bold">AI is a Double-Edged Sword — Use It to Build</h2>
       <p class="mt-2 text-slate-700">
-        Yes, it’s tough out there — especially in IT — as AI replaces repetitive work and some roles become redundant.
-        But it also makes <em>builders</em> superhuman. The best time to build is now.
+        Yes, it’s tough out there as AI replaces repetitive work and some roles become redundant. But it also makes <em>builders</em> superhuman. The best time to build is now.
       </p>
       <p class="mt-2 text-slate-700">
         Come to my events to get empowered, think outside the box, and start your path to success and prosperity.
-        Channel your inner Elon, Sam, or Zuck — and build the future.
       </p>
       <div class="mt-4 flex flex-wrap gap-3">
         <a href="https://www.meetup.com/" class="px-5 py-3 bg-slate-900 text-white rounded-xl hover:bg-slate-800">Join on Meetup</a>
@@ -204,423 +198,100 @@
   <!-- Packages (Lower Prices) -->
   <section id="packages" class="mx-auto max-w-6xl px-4 py-12">
     <h2 class="text-2xl md:text-3xl font-bold">Packages & Pricing (AUD)</h2>
-    <p class="mt-2 text-slate-600">Transparent, founder-friendly pricing. Customise any package after our discovery call.</p>
+    <p class="mt-2 text-slate-600">Mentoring & advisory by default — <strong>not a partner</strong>. If you’re looking to co-found with me, see <a href="#partnership" class="text-sky-700 underline">Partnering</a>.</p>
     <div class="mt-6 grid md:grid-cols-3 gap-6">
       <div class="bg-white border border-sky-200 rounded-2xl p-6 shadow-sm">
         <h3 class="font-semibold">Clarity Sprint</h3>
         <p class="text-slate-600 mt-1">1 week — strategy & scope</p>
-        <p class="text-3xl font-bold mt-4">$790</p>
+        <p class="text-3xl font-bold mt-4">$490</p>
         <ul class="mt-4 text-slate-600 space-y-1">
           <li>• Deep dive + strategy brief</li>
           <li>• MVP scope & risk map</li>
           <li>• Roadmap (6–8 weeks)</li>
         </ul>
         <a href="https://calendar.app.google/5hsvLPKmr5MoQSKUA" class="mt-5 inline-block w-full text-center bg-slate-900 text-white px-4 py-2 rounded-xl hover:bg-slate-800">Start Here</a>
+        <p class="mt-3 text-xs text-slate-500">Role: Advisor/Mentor (not partner)</p>
       </div>
       <div class="bg-white border border-sky-200 rounded-2xl p-6 shadow-sm">
         <h3 class="font-semibold">MVP Kickstart</h3>
         <p class="text-slate-600 mt-1">4 weeks — build & demo</p>
-        <p class="text-3xl font-bold mt-4">$3,490</p>
+        <p class="text-3xl font-bold mt-4">$2,490</p>
         <ul class="mt-4 text-slate-600 space-y-1">
           <li>• Weekly sprint planning</li>
           <li>• Working MVP demo by week 4</li>
           <li>• Launch checklist & GTM plan</li>
         </ul>
         <a href="https://calendar.app.google/5hsvLPKmr5MoQSKUA" class="mt-5 inline-block w-full text-center bg-sky-600 text-white px-4 py-2 rounded-xl hover:bg-sky-700">Book MVP Kickstart</a>
+        <p class="mt-3 text-xs text-slate-500">Role: Advisor/Mentor (not partner)</p>
       </div>
       <div class="bg-white border border-sky-200 rounded-2xl p-6 shadow-sm">
-        <h3 class="font-semibold">Launch Partner</h3>
+        <h3 class="font-semibold">Launch Partner (Advisory)</h3>
         <p class="text-slate-600 mt-1">12 weeks — ship & grow</p>
-        <p class="text-3xl font-bold mt-4">$8,900</p>
+        <p class="text-3xl font-bold mt-4">$6,900</p>
         <ul class="mt-4 text-slate-600 space-y-1">
           <li>• Coaching + delivery oversight</li>
           <li>• Launch operations & iterations</li>
           <li>• Traction experiments & metrics</li>
         </ul>
         <a href="https://calendar.app.google/5hsvLPKmr5MoQSKUA" class="mt-5 inline-block w-full text-center border border-slate-300 px-4 py-2 rounded-xl hover:bg-white">Talk About Fit</a>
+        <p class="mt-3 text-xs text-slate-500">Role: Advisor/Mentor (not partner)</p>
       </div>
     </div>
     <div class="mt-6 text-slate-600">
-      <p>Prefer ad-hoc? <strong>$190 / 60-min session</strong> — product, tech, or team coaching. <a class="text-sky-700 underline" href="https://calendar.app.google/5hsvLPKmr5MoQSKUA">Book a session</a>.</p>
+      <p>Prefer ad-hoc? <strong>$150 / 60-min session</strong> — product, tech, or team coaching. <a class="text-sky-700 underline" href="https://calendar.app.google/5hsvLPKmr5MoQSKUA">Book a session</a>.</p>
       <p class="text-xs mt-2">All prices incl. GST where applicable. Limited spots remain each quarter.</p>
     </div>
   </section>
 
-  <!-- Featured Startups & Communities -->
-  <section id="startups" class="px-4 py-12">
-    <!-- Inserted exactly as provided, wrapped in a section -->
-    <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-16">
-        <h3 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Featured Startups</h3>
-        <div class="w-24 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto mb-8"></div>
-        <p class="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-          Meet the startups currently building with BetaBuilders!
+  <!-- Partnering (Selective Co-Founder) -->
+  <section id="partnership" class="mx-auto max-w-6xl px-4 py-12">
+    <h2 class="text-2xl md:text-3xl font-bold">Partner with Serge (Selective Co-Founder)</h2>
+    <p class="mt-2 text-slate-600">
+      For a small number of founders, I can join as a <strong>co-founder</strong>. This is separate from mentoring. We agree roles, decision rights, and incentives up-front.
+    </p>
+    <div class="mt-6 grid md:grid-cols-2 gap-6">
+      <div class="bg-white border border-emerald-200 rounded-2xl p-6 shadow-sm">
+        <h3 class="font-semibold">You’re Non-Technical</h3>
+        <p class="mt-2 text-slate-600">
+          I organise and lead a capable **tech team** to build your product. We target a fast MVP, validate with users, and iterate to traction.
         </p>
+        <ul class="mt-3 text-slate-600 space-y-1">
+          <li>• Co-founder role with clear responsibilities</li>
+          <li>• Team hiring/sourcing & delivery leadership</li>
+          <li>• Equity / rev-share structure; modest retainer for commitment</li>
+        </ul>
+        <a href="https://calendar.app.google/5hsvLPKmr5MoQSKUA" class="mt-5 inline-block w-full text-center bg-slate-900 text-white px-4 py-2 rounded-xl hover:bg-slate-800">Discuss Partnership</a>
       </div>
-      <div class="flex flex-col gap-12 items-center">
-
-        <!-- Job Search Works -->
-        <div class="bg-gradient-to-br from-blue-50 to-purple-20 rounded-2xl p-6 sm:p-8 border border-blue-100 card-hover max-w-4xl w-full card-fixed">
-          <div class="flex flex-col sm:flex-row gap-6">
-            <div class="flex flex-col items-center justify-center text-center gap-2 sm:w-40 flex-shrink-0">
-              <a href="https://jobsearch.works/" target="_blank">
-                <div class="bg-purple-100 p-4 rounded-full shadow-md">
-                  <img src="images/JobSearch_Logo.png" alt="Job Search Works Logo" class="w-16 h-16 sm:w-20 sm:h-20 object-contain">
-                </div>
-              </a>
-              <a href="https://jobsearch.works/" target="_blank" class="text-lg sm:text-xl font-semibold text-gradient">JobSearchWorks</a>
-            </div>
-            <div class="flex flex-col justify-center text-left flex-1 sm:pl-6 text-sm sm:text-base">
-              <ul class="space-y-4 text-gray-700 leading-relaxed">
-                <li class="flex items-start space-x-3">
-                  <svg class="w-5 h-5 text-blue-500 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                  </svg>
-                  <span>Apply once — we handle the rest</span>
-                </li>
-                <li class="flex items-start space-x-3">
-                  <svg class="w-5 h-5 text-blue-500 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                  </svg>
-                  <span>AI finds jobs, tailors your resume, and submits applications</span>
-                </li>
-                <li class="flex items-start space-x-3">
-                  <svg class="w-5 h-5 text-blue-500 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                  </svg>
-                  <span>No contracts, pay per application, and track progress</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="mt-6 w-full">
-            <div class="flex justify-between text-xs text-gray-500 mb-1 px-1 sm:px-0">
-              <span>Idea</span><span>Prototype</span><span>Team</span><span>MVP</span><span>Go Live</span><span>First Client</span><span>Revenue</span>
-            </div>
-            <div class="flex w-full h-2 rounded overflow-hidden bg-gray-200">
-              <div class="h-2" style="width: 61%; background: linear-gradient(to right, #3b82f6, #8b5cf6);"></div>
-              <div class="bg-gray-300 h-2" style="width: 39%;"></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- QuickSite -->
-        <div class="bg-gradient-to-br from-green-20 to-green-10 rounded-2xl p-6 sm:p-8 card-hover border border-blue-100 card-fixed max-w-4xl w-full">
-          <div class="flex flex-col sm:flex-row gap-6">
-            <div class="flex flex-col items-center justify-center text-center gap-2 sm:w-40 flex-shrink-0">
-              <a href="https://quicksite.space/" target="_blank">
-                <div class="bg-green-100 p-4 rounded-full shadow-md">
-                  <img src="images/Quicksite_Logo.png" alt="QuickSite Logo" class="w-16 h-16 sm:w-20 sm:h-20 object-contain">
-                </div>
-              </a>
-              <a href="https://quicksite.space/" target="_blank" class="text-lg sm:text-xl font-semibold text-gradient">QuickSite</a>
-            </div>
-            <div class="flex flex-col justify-center text-left flex-1 sm:pl-6 text-sm sm:text-base">
-              <ul class="space-y-4 text-gray-700 leading-relaxed">
-                <li class="flex items-start space-x-3">
-                  <svg class="w-5 h-5 text-green-500 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                  </svg>
-                  <span>Launch your website in minutes — no coding needed</span>
-                </li>
-                <li class="flex items-start space-x-3">
-                  <svg class="w-5 h-5 text-green-500 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                  </svg>
-                  <span>AI-powered setup with fast, secure hosting</span>
-                </li>
-                <li class="flex items-start space-x-3">
-                  <svg class="w-5 h-5 text-green-500 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                  </svg>
-                  <span>One-click deployment for instant go-live</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="mt-6 w-full">
-            <div class="flex justify-between text-xs text-gray-500 mb-1 px-1 sm:px-0">
-              <span>Idea</span><span>Prototype</span><span>Team</span><span>MVP</span><span>Go Live</span><span>First Client</span><span>Revenue</span>
-            </div>
-            <div class="flex w-full h-2 rounded overflow-hidden bg-gray-200">
-              <div class="h-2" style="width: 51%; background: linear-gradient(to right, #34D399, #059669);"></div>
-              <div class="bg-gray-300 h-2" style="width: 49%;"></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- TalentHub -->
-        <div class="bg-gradient-to-br from-pink-50 to-purple-20 rounded-2xl p-6 sm:p-8 card-hover border border-blue-100 card-fixed max-w-4xl w-full">
-          <div class="flex flex-col sm:flex-row gap-6">
-            <div class="flex flex-col items-center justify-center text-center gap-2 sm:w-40 flex-shrink-0">
-              <a href="https://talenthub.show/" target="_blank">
-                <div class="bg-pink-100 p-4 rounded-full shadow-md">
-                  <img src="images/talent_hub_logo.png" alt="TalentHub Logo" class="w-16 h-16 sm:w-20 sm:h-20 object-contain rounded-full">
-                </div>
-              </a>
-              <a href="https://talenthub.show/" target="_blank" class="text-lg sm:text-xl font-semibold text-gradient">TalentHub</a>
-            </div>
-            <div class="flex flex-col justify-center text-left flex-1 sm:pl-6 text-sm sm:text-base">
-              <ul class="space-y-4 text-gray-700 leading-relaxed">
-                <li class="flex items-start space-x-3">
-                  <svg class="w-5 h-5 text-pink-500 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                  </svg>
-                  <span>Showcase your skills with video intros and a living profile</span>
-                </li>
-                <li class="flex items-start space-x-3">
-                  <svg class="w-5 h-5 text-pink-500 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                  </svg>
-                  <span>AI analyzes your interviews to highlight strengths</span>
-                </li>
-                <li class="flex items-start space-x-3">
-                  <svg class="w-5 h-5 text-pink-500 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                  </svg>
-                  <span>Connect directly with top employers for faster, smarter hiring</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="mt-6 w-full">
-            <div class="flex justify-between text-xs text-gray-500 mb-1 px-1 sm:px-0">
-              <span>Idea</span><span>Prototype</span><span>Team</span><span>MVP</span><span>Go Live</span><span>First Client</span><span>Revenue</span>
-            </div>
-            <div class="flex w-full h-2 rounded overflow-hidden bg-gray-200">
-              <div class="h-2" style="width: 50%; background: linear-gradient(to right, #3b82f6, #8b5cf6);"></div>
-              <div class="bg-gray-300 h-2" style="width: 50%;"></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- ArtOut -->
-        <div class="bg-gradient-to-br from-purple-50 to-blue-20 rounded-2xl p-6 sm:p-8 card-hover border border-blue-100 card-fixed max-w-4xl w-full">
-          <div class="flex flex-col sm:flex-row gap-6">
-            <div class="flex flex-col items-center justify-center text-center gap-2 sm:w-40 flex-shrink-0">
-              <a href="https://artout.site/" target="_blank">
-                <div class="bg-purple-100 p-4 rounded-full shadow-md">
-                  <img src="images/artout_logo.png" alt="ArtOut Logo" class="w-16 h-16 sm:w-20 sm:h-20 object-contain rounded-full">
-                </div>
-              </a>
-              <a href="https://artout.site/" target="_blank" class="text-lg sm:text-xl font-semibold text-gradient">ArtOut</a>
-            </div>
-            <div class="flex flex-col justify-center text-left flex-1 sm:pl-6 text-sm sm:text-base">
-              <ul class="space-y-4 text-gray-700 leading-relaxed">
-                <li class="flex items-start space-x-3">
-                  <svg class="w-5 h-5 text-purple-500 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                  </svg>
-                  <span>Capture street art live — no uploads or filters</span>
-                </li>
-                <li class="flex items-start space-x-3">
-                  <svg class="w-5 h-5 text-purple-500 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                  </svg>
-                  <span>Snap and geotag graffiti and murals instantly</span>
-                </li>
-                <li class="flex items-start space-x-3">
-                  <svg class="w-5 h-5 text-purple-500 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                  </svg>
-                  <span>Join a global map to preserve and explore urban creativity worldwide</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="mt-6 w-full">
-            <div class="flex justify-between text-xs text-gray-500 mb-1 px-1 sm:px-0">
-              <span>Idea</span><span>Prototype</span><span>Team</span><span>MVP</span><span>Go Live</span><span>First Client</span><span>Revenue</span>
-            </div>
-            <div class="flex w-full h-2 rounded overflow-hidden bg-gray-200">
-              <div class="h-2" style="width: 21%; background: linear-gradient(to right, #a78bfa, #7c3aed);"></div>
-              <div class="bg-gray-300 h-2" style="width: 79%;"></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- GrassKarma -->
-        <div class="bg-gradient-to-br from-green-50 to-green-20 rounded-2xl p-6 sm:p-8 card-hover border border-blue-100 card-fixed max-w-4xl w-full">
-          <div class="flex flex-col sm:flex-row gap-6">
-            <div class="flex flex-col items-center justify-center text-center gap-2 sm:w-40 flex-shrink-0">
-              <a href="https://grasskarma.website/" target="_blank">
-                <div class="bg-green-100 p-4 rounded-full shadow-md">
-                  <img src="images/grasskarma_Logo.png" alt="GrassKarma logo" class="w-16 h-16 sm:w-20 sm:h-20 object-contain rounded-full">
-                </div>
-              </a>
-              <a href="https://grasskarma.website/" target="_blank" class="text-lg sm:text-xl font-semibold text-gradient">GrassKarma</a>
-            </div>
-            <div class="flex flex-col justify-center text-left flex-1 sm:pl-6 text-sm sm:text-base">
-              <ul class="space-y-4 text-gray-700 leading-relaxed">
-                <li class="flex items-start space-x-3">
-                  <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                  </svg>
-                  <span>Share the mow and grow the karma</span>
-                </li>
-                <li class="flex items-start space-x-3">
-                  <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                  </svg>
-                  <span>Team up with neighbors and split costs</span>
-                </li>
-                <li class="flex items-start space-x-3">
-                  <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                  </svg>
-                  <span>Keep lawns sharp with reminders and group deals</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="mt-6 w-full">
-            <div class="flex justify-between text-xs text-gray-500 mb-1 px-1 sm:px-0">
-              <span>Idea</span><span>Prototype</span><span>Team</span><span>MVP</span><span>Go Live</span><span>First Client</span><span>Revenue</span>
-            </div>
-            <div class="flex w-full h-2 rounded overflow-hidden bg-gray-200">
-              <div class="h-2" style="width: 21%; background: linear-gradient(to right, #34d399, #059669);"></div>
-              <div class="bg-gray-300 h-2" style="width: 79%;"></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- SeedStart -->
-        <div class="bg-gradient-to-br from-blue-50 to-teal-50 rounded-2xl p-6 sm:p-8 card-hover border border-blue-100 card-fixed max-w-4xl w-full">
-          <div class="flex flex-col sm:flex-row gap-6">
-            <div class="flex flex-col items-center justify-center text-center gap-2 sm:w-40 flex-shrink-0">
-              <a href="https://seedstart.world/" target="_blank">
-                <div class="bg-blue-100 p-4 rounded-full shadow-md">
-                  <img src="images/seedstart_logo.png" alt="SeedStart logo" class="w-16 h-16 sm:w-20 sm:h-20 object-contain rounded-full">
-                </div>
-              </a>
-              <a href="https://seedstart.world/" target="_blank" rel="noopener noreferrer" class="text-lg sm:text-xl font-semibold text-gradient">SeedStart</a>
-            </div>
-            <div class="flex flex-col justify-center text-left flex-1 sm:pl-6 text-sm sm:text-base">
-              <ul class="space-y-4 text-gray-700 leading-relaxed">
-                <li class="flex items-start space-x-3">
-                  <svg class="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                  </svg>
-                  <span>Turn ideas into reality with SeedSite</span>
-                </li>
-                <li class="flex items-start space-x-3">
-                  <svg class="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                  </svg>
-                  <span>Build your team and use expert tools</span>
-                </li>
-                <li class="flex items-start space-x-3">
-                  <svg class="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                  </svg>
-                  <span>Launch fast with support every step of the way</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="mt-6 w-full">
-            <div class="flex justify-between text-xs text-gray-500 mb-1 px-1 sm:px-0">
-              <span>Idea</span><span>Prototype</span><span>Team</span><span>MVP</span><span>Go Live</span><span>First Client</span><span>Revenue</span>
-            </div>
-            <div class="flex w-full h-2 rounded overflow-hidden bg-gray-200">
-              <div class="h-2" style="width: 45%; background: linear-gradient(to right, #60a5fa, #10b981);"></div>
-              <div class="bg-gray-300 h-2" style="width: 55%;"></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Free Dates -->
-        <div class="bg-gradient-to-br from-pink-50 to-orange-50 rounded-2xl p-6 sm:p-8 card-hover border border-pink-100 card-fixed max-w-4xl w-full">
-          <div class="flex flex-col sm:flex-row gap-6">
-            <div class="flex flex-col items-center justify-center text-center gap-2 sm:w-40 flex-shrink-0">
-              <a href="https://freedates.app/" target="_blank">
-                <div class="bg-pink-100 p-4 rounded-full shadow-md">
-                  <div class="text-4xl sm:text-5xl" role="img" aria-label="Heart emoji representing FreeDates">💗</div>
-                </div>
-              </a>
-              <a href="https://freedates.app/" target="_blank" class="text-lg sm:text-xl font-semibold text-gradient">Free Dates</a>
-            </div>
-            <div class="flex flex-col justify-center text-left flex-1 sm:pl-6 text-sm sm:text-base">
-              <ul class="space-y-4 text-gray-700 leading-relaxed">
-                <li class="flex items-start space-x-3">
-                  <svg class="w-5 h-5 text-pink-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                  </svg>
-                  <span>Earn attention, not buy it — SMS only, no bots</span>
-                </li>
-                <li class="flex items-start space-x-3">
-                  <svg class="w-5 h-5 text-pink-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                  </svg>
-                  <span>100% free and heart-based, no ghosting</span>
-                </li>
-                <li class="flex items-start space-x-3">
-                  <svg class="w-5 h-5 text-pink-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                  </svg>
-                  <span>Build, earn, and rise in the Hearts Economy</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="mt-6 w-full">
-            <div class="flex justify-between text-xs text-gray-500 mb-1 px-1 sm:px-0">
-              <span>Idea</span><span>Prototype</span><span>Team</span><span>MVP</span><span>Go Live</span><span>First Client</span><span>Revenue</span>
-            </div>
-            <div class="flex w-full h-2 rounded overflow-hidden bg-gray-200">
-              <div class="h-2" style="width: 45%; background: linear-gradient(to right, #f87171, #e13030);"></div>
-              <div class="bg-gray-300 h-2" style="width: 55%;"></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Buildless -->
-        <div class="bg-gradient-to-br from-blue-50 to-purple-20 rounded-2xl p-6 sm:p-8 border border-blue-100 card-hover max-w-4xl w-full card-fixed">
-          <div class="flex flex-col sm:flex-row gap-6">
-            <div class="flex flex-col items-center justify-center text-center gap-2 sm:w-40 flex-shrink-0">
-              <a href="https://buildless.online/" target="_blank">
-                <div class="bg-purple-100 p-4 rounded-full shadow-md">
-                  <div class="text-4xl sm:text-5xl" role="img" aria-label="Code brackets representing JSON">{}</div>
-                </div>
-              </a>
-              <a href="https://buildless.online/" target="_blank" class="text-lg sm:text-xl font-semibold text-gradient">Buildless</a>
-            </div>
-            <div class="flex flex-col justify-center text-left flex-1 sm:pl-6 text-sm sm:text-base">
-              <ul class="space-y-4 text-gray-700 leading-relaxed">
-                <li class="flex items-start space-x-3">
-                  <svg class="w-5 h-5 text-blue-500 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                  </svg>
-                  <span>Build with JSON &amp; JavaScript — no HTML needed</span>
-                </li>
-                <li class="flex items-start space-x-3">
-                  <svg class="w-5 h-5 text-blue-500 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                  </svg>
-                  <span>Authentication &amp; data storage built-in, no setup required</span>
-                </li>
-                <li class="flex items-start space-x-3">
-                  <svg class="w-5 h-5 text-blue-500 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                  </svg>
-                  <span>Real-time updates, no build tools or frameworks needed</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="mt-6 w-full">
-            <div class="flex justify-between text-xs text-gray-500 mb-1 px-1 sm:px-0">
-              <span>Idea</span><span>Prototype</span><span>Team</span><span>MVP</span><span>Go Live</span><span>First Client</span><span>Revenue</span>
-            </div>
-            <div class="flex w-full h-2 rounded overflow-hidden bg-gray-200">
-              <div class="h-2" style="width: 50%; background: linear-gradient(to right, #3b82f6, #8b5cf6);"></div>
-              <div class="bg-gray-300 h-2" style="width: 50%;"></div>
-            </div>
-          </div>
-        </div>
-
+      <div class="bg-white border border-emerald-200 rounded-2xl p-6 shadow-sm">
+        <h3 class="font-semibold">You’re Technical</h3>
+        <p class="mt-2 text-slate-600">
+          Learn to **build without funding**: recruit volunteers, ship with near-zero cost, and use a **zero-cost hosting stack** where possible.
+        </p>
+        <ul class="mt-3 text-slate-600 space-y-1">
+          <li>• Co-founder role with delivery focus</li>
+          <li>• Volunteer team playbook & rituals</li>
+          <li>• Equity / rev-share aligned to outcomes</li>
+        </ul>
+        <a href="https://calendar.app.google/5hsvLPKmr5MoQSKUA" class="mt-5 inline-block w-full text-center bg-sky-600 text-white px-4 py-2 rounded-xl hover:bg-sky-700">Explore Fit</a>
       </div>
     </div>
+    <p class="mt-4 text-xs text-slate-500">Partnerships are limited and subject to mutual due diligence.</p>
+  </section>
+
+  <!-- Projects (no logos, no BetaBuilders references) -->
+  <section id="projects" class="mx-auto max-w-6xl px-4 py-12">
+    <h2 class="text-2xl md:text-3xl font-bold">Selected Projects & Communities</h2>
+    <p class="mt-2 text-slate-600">A few initiatives I’ve started or advised (links only, no logos):</p>
+    <ul class="mt-4 grid md:grid-cols-2 gap-3 text-slate-700">
+      <li>• <a class="text-sky-700 underline" href="https://jobsearch.works/" target="_blank" rel="noopener">JobSearchWorks</a> — AI finds jobs, tailors your resume, and submits applications</li>
+      <li>• <a class="text-sky-700 underline" href="https://quicksite.space/" target="_blank" rel="noopener">QuickSite</a> — Launch a website in minutes, AI-powered setup</li>
+      <li>• <a class="text-sky-700 underline" href="https://talenthub.show/" target="_blank" rel="noopener">TalentHub</a> — Showcase skills with video, AI highlights strengths</li>
+      <li>• <a class="text-sky-700 underline" href="https://artout.site/" target="_blank" rel="noopener">ArtOut</a> — Capture street art live; snap & geotag instantly</li>
+      <li>• <a class="text-sky-700 underline" href="https://grasskarma.website/" target="_blank" rel="noopener">GrassKarma</a> — Share the mow with neighbours; split costs</li>
+      <li>• <a class="text-sky-700 underline" href="https://seedstart.world/" target="_blank" rel="noopener">SeedStart</a> — From ideas to reality with SeedSite</li>
+      <li>• <a class="text-sky-700 underline" href="https://freedates.app/" target="_blank" rel="noopener">Free Dates</a> — Earn attention with SMS only; no bots</li>
+      <li>• <a class="text-sky-700 underline" href="https://buildless.online/" target="_blank" rel="noopener">Buildless</a> — Build with JSON & JavaScript; real-time updates</li>
+    </ul>
   </section>
 
   <!-- FAQ -->
@@ -632,12 +303,22 @@
         <div class="mt-2 text-slate-600">Yes — web, mobile, and SaaS products only.</div>
       </details>
       <details class="bg-white border border-slate-200 rounded-xl p-4">
+        <summary class="cursor-pointer font-semibold">Are you my partner or my advisor?</summary>
+        <div class="mt-2 text-slate-600">
+          By default I’m an <strong>advisor/mentor</strong> (not a partner). See the <a href="#packages" class="text-sky-700 underline">Packages</a>. I consider <strong>selective co-founder partnerships</strong> — see <a href="#partnership" class="text-sky-700 underline">Partnering</a>.
+        </div>
+      </details>
+      <details class="bg-white border border-slate-200 rounded-xl p-4">
         <summary class="cursor-pointer font-semibold">Will you build the product?</summary>
-        <div class="mt-2 text-slate-600">I coach, lead delivery, and can help you source and run a team to build the MVP.</div>
+        <div class="mt-2 text-slate-600">
+          In advisory, I coach and lead delivery with your team (or help you source one). In a co-founder partnership, I organise the tech team and drive delivery with you.
+        </div>
       </details>
       <details class="bg-white border border-slate-200 rounded-xl p-4">
         <summary class="cursor-pointer font-semibold">What tools & stack do you recommend?</summary>
-        <div class="mt-2 text-slate-600">Modern web: React/TypeScript, Firebase/GCP, Node. We’ll choose what fits your constraints and speed.</div>
+        <div class="mt-2 text-slate-600">
+          Modern web: React/TypeScript, Node, and managed backends (e.g., Firebase/GCP via a <em>Firestore service abstraction</em>, never directly). We’ll choose what fits speed and cost.
+        </div>
       </details>
       <details class="bg-white border border-slate-200 rounded-xl p-4">
         <summary class="cursor-pointer font-semibold">How do I contact you?</summary>
@@ -686,10 +367,10 @@
       "@type": "OfferCatalog",
       "name": "Packages",
       "itemListElement": [
-        { "@type": "Offer", "name": "Clarity Sprint (1 week)", "priceCurrency": "AUD", "price": "790" },
-        { "@type": "Offer", "name": "MVP Kickstart (4 weeks)", "priceCurrency": "AUD", "price": "3490" },
-        { "@type": "Offer", "name": "Launch Partner (12 weeks)", "priceCurrency": "AUD", "price": "8900" },
-        { "@type": "Offer", "name": "Ad-hoc Coaching (60 min)", "priceCurrency": "AUD", "price": "190" }
+        { "@type": "Offer", "name": "Clarity Sprint (1 week)", "priceCurrency": "AUD", "price": "490" },
+        { "@type": "Offer", "name": "MVP Kickstart (4 weeks)", "priceCurrency": "AUD", "price": "2490" },
+        { "@type": "Offer", "name": "Launch Partner (12 weeks, advisory)", "priceCurrency": "AUD", "price": "6900" },
+        { "@type": "Offer", "name": "Ad-hoc Coaching (60 min)", "priceCurrency": "AUD", "price": "150" }
       ]
     },
     "provider": {
