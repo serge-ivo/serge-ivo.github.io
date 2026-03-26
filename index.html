@@ -3,545 +3,702 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Serge Ivo — Software Startup Coach & Motivational Speaker</title>
-  <meta name="description" content="Serge Ivo helps founders start smarter, form scrappy teams, and launch software products faster with AI. Keynotes & workshops that inspire people to think bigger and build." />
-  <meta name="theme-color" content="#0ea5e9" />
+  <title>Serge Ivo — AI Transformation Leader</title>
+  <meta name="description" content="Serge Ivo helps businesses transform operations with AI agents, next-gen workflows, coaching, consulting, and hands-on enablement. Empower your team with AI." />
+  <meta name="theme-color" content="#7c3aed" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Serge Ivo — Software Startup Coach & Motivational Speaker" />
-  <meta property="og:description" content="AI-assisted strategy, team formation, MVP sprints, and inspiring talks that get people building." />
+  <meta property="og:title" content="Serge Ivo — AI Transformation Leader" />
+  <meta property="og:description" content="Transform your business with AI-powered agents and workflows. Coaching, consulting, setup, and enablement that empowers your team." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://sergeivo.online/" />
   <meta property="og:image" content="https://sergeivo.online/og-image.jpg" />
 
   <!-- Tailwind (CDN) -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body {
-      background-image:
-        radial-gradient(1200px 600px at 10% -10%, rgba(14,165,233,0.12), transparent),
-        radial-gradient(1000px 500px at 110% 10%, rgba(99,102,241,0.12), transparent);
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'glow': 'glow 3s ease-in-out infinite alternate',
+            'slide-up': 'slideUp 0.6s ease-out both',
+            'fade-in': 'fadeIn 0.8s ease-out both',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' },
+            },
+            glow: {
+              '0%': { opacity: '0.4' },
+              '100%': { opacity: '0.8' },
+            },
+            slideUp: {
+              '0%': { opacity: '0', transform: 'translateY(20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+          }
+        }
+      }
     }
-    .card-hover { transition: transform .2s ease, box-shadow .2s ease; }
-    .card-hover:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(2,6,23,0.08); }
+  </script>
+  <!-- Inter font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #050510;
+      color: #e2e8f0;
+    }
+    /* Ambient background */
+    .bg-ambient {
+      background-image:
+        radial-gradient(ellipse 800px 600px at 20% 0%, rgba(124,58,237,0.15), transparent),
+        radial-gradient(ellipse 600px 400px at 80% 10%, rgba(59,130,246,0.1), transparent),
+        radial-gradient(ellipse 900px 500px at 50% 80%, rgba(14,165,233,0.06), transparent);
+    }
+    /* Glass card */
+    .glass {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(12px);
+    }
+    .glass-bright {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      backdrop-filter: blur(12px);
+    }
+    .glass:hover, .glass-bright:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.16);
+    }
+    /* Gradient text */
     .text-gradient {
-      background: linear-gradient(to right, #7c3aed, #3b82f6);
+      background: linear-gradient(135deg, #a78bfa, #60a5fa, #34d399);
       -webkit-background-clip: text; background-clip: text; color: transparent;
     }
+    .text-gradient-warm {
+      background: linear-gradient(135deg, #f472b6, #a78bfa, #60a5fa);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    /* Accent border glow */
+    .border-glow {
+      position: relative;
+    }
+    .border-glow::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: inherit;
+      background: linear-gradient(135deg, rgba(124,58,237,0.3), rgba(59,130,246,0.3), rgba(52,211,153,0.3));
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .border-glow:hover::before { opacity: 1; }
+    /* Card lift */
+    .card-lift {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card-lift:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(124,58,237,0.15);
+    }
+    /* Badge */
+    .badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 4px 12px; border-radius: 9999px; font-size: 0.75rem; font-weight: 600;
+      background: rgba(124,58,237,0.15); color: #a78bfa;
+      border: 1px solid rgba(124,58,237,0.25);
+    }
+    /* Pulse dot */
+    .pulse-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: #34d399;
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(52,211,153,0.4); }
+      50% { box-shadow: 0 0 0 6px rgba(52,211,153,0); }
+    }
+    /* Section divider */
+    .section-line {
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(124,58,237,0.3), transparent);
+    }
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #050510; }
+    ::-webkit-scrollbar-thumb { background: rgba(124,58,237,0.3); border-radius: 3px; }
+    /* FAQ */
+    details summary { list-style: none; }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::after {
+      content: '+'; font-size: 1.25rem; font-weight: 300; color: #a78bfa;
+      transition: transform 0.2s;
+    }
+    details[open] summary::after { content: '-'; }
+    /* Mobile nav */
+    .nav-open { transform: translateX(0) !important; }
   </style>
 </head>
-<body class="text-slate-800 antialiased">
+<body class="antialiased bg-ambient">
+
   <!-- Header -->
-  <header class="sticky top-0 z-30 backdrop-blur bg-white/70 border-b border-slate-200">
+  <header class="sticky top-0 z-50 border-b border-white/5" style="background:rgba(5,5,16,0.85);backdrop-filter:blur(20px);">
     <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-2">
-        <svg width="28" height="28" viewBox="0 0 24 24" class="rounded-xl shadow-sm" aria-hidden="true">
-          <circle cx="12" cy="12" r="12" fill="#0ea5e9"></circle>
-          <path d="M7 13l3 3 7-7" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <span class="font-semibold">Serge Ivo</span>
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-violet-600 to-blue-500 flex items-center justify-center shadow-lg shadow-violet-500/20">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <span class="font-bold text-white text-lg tracking-tight">Serge Ivo</span>
       </a>
-      <nav class="hidden md:flex items-center gap-6 text-sm">
-        <a href="#services" class="hover:text-slate-900 text-slate-600">Services</a>
-        <a href="#speaking" class="hover:text-slate-900 text-slate-600">Speaking</a>
-        <a href="#packages" class="hover:text-slate-900 text-slate-600">Packages</a>
-        <a href="#partnership" class="hover:text-slate-900 text-slate-600">Partnering</a>
-        <a href="#events" class="hover:text-slate-900 text-slate-600">Events</a>
-        <a href="#startups" class="hover:text-slate-900 text-slate-600">Startups</a>
-        <a href="#faq" class="hover:text-slate-900 text-slate-600">FAQ</a>
-        <a href="#contact" class="hover:text-slate-900 text-slate-600">Contact</a>
-        <a href="https://calendar.app.google/5hsvLPKmr5MoQSKUA" class="bg-slate-900 text-white px-4 py-2 rounded-xl hover:bg-slate-800">Book</a>
+      <nav class="hidden md:flex items-center gap-7 text-sm">
+        <a href="#services" class="text-slate-400 hover:text-white transition-colors">Services</a>
+        <a href="#speaking" class="text-slate-400 hover:text-white transition-colors">Speaking</a>
+        <a href="#packages" class="text-slate-400 hover:text-white transition-colors">Packages</a>
+        <a href="#partnership" class="text-slate-400 hover:text-white transition-colors">Partnering</a>
+        <a href="#portfolio" class="text-slate-400 hover:text-white transition-colors">Portfolio</a>
+        <a href="#faq" class="text-slate-400 hover:text-white transition-colors">FAQ</a>
+        <a href="https://calendar.app.google/5hsvLPKmr5MoQSKUA" class="px-4 py-2 rounded-xl bg-gradient-to-r from-violet-600 to-blue-500 text-white font-medium hover:shadow-lg hover:shadow-violet-500/25 transition-all">Book a Call</a>
       </nav>
-      <a href="https://calendar.app.google/5hsvLPKmr5MoQSKUA" class="md:hidden bg-slate-900 text-white px-3 py-2 rounded-lg text-sm">Book</a>
+      <!-- Mobile menu button -->
+      <button onclick="document.getElementById('mobileMenu').classList.toggle('nav-open')" class="md:hidden text-white p-2" aria-label="Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+    <!-- Mobile menu panel -->
+    <div id="mobileMenu" class="md:hidden fixed inset-y-0 right-0 w-72 bg-[#0a0a1a] border-l border-white/10 transform translate-x-full transition-transform z-50 p-6 flex flex-col gap-4">
+      <button onclick="this.parentElement.classList.remove('nav-open')" class="self-end text-slate-400 hover:text-white mb-4" aria-label="Close">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <a href="#services" onclick="this.parentElement.classList.remove('nav-open')" class="text-slate-300 hover:text-white py-2">Services</a>
+      <a href="#speaking" onclick="this.parentElement.classList.remove('nav-open')" class="text-slate-300 hover:text-white py-2">Speaking</a>
+      <a href="#packages" onclick="this.parentElement.classList.remove('nav-open')" class="text-slate-300 hover:text-white py-2">Packages</a>
+      <a href="#partnership" onclick="this.parentElement.classList.remove('nav-open')" class="text-slate-300 hover:text-white py-2">Partnering</a>
+      <a href="#portfolio" onclick="this.parentElement.classList.remove('nav-open')" class="text-slate-300 hover:text-white py-2">Portfolio</a>
+      <a href="#faq" onclick="this.parentElement.classList.remove('nav-open')" class="text-slate-300 hover:text-white py-2">FAQ</a>
+      <a href="https://calendar.app.google/5hsvLPKmr5MoQSKUA" class="mt-4 px-5 py-3 rounded-xl bg-gradient-to-r from-violet-600 to-blue-500 text-white font-medium text-center">Book a Call</a>
     </div>
   </header>
 
   <!-- Hero -->
-  <section class="mx-auto max-w-6xl px-4 pt-12 pb-10">
-    <div class="grid md:grid-cols-2 gap-10 items-center">
-      <div>
-        <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">
-          Software Startup Coach <span class="text-slate-400">&</span> <span class="text-sky-600">Motivational Speaker</span>
+  <section class="mx-auto max-w-6xl px-4 pt-20 pb-16 md:pt-28 md:pb-24">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="animate-slide-up">
+        <div class="badge mb-6"><span class="pulse-dot"></span> Available for engagements</div>
+        <h1 class="text-4xl md:text-6xl font-black leading-[1.1] tracking-tight">
+          AI Transformation
+          <span class="text-gradient block">Leader</span>
         </h1>
-        <p class="mt-5 text-lg text-slate-600">
-          I help founders go from idea to launched software product. We’ll crystallise your strategy, form the right team, run a focused MVP sprint, and ship — using AI to speed up everything.
+        <p class="mt-6 text-lg md:text-xl text-slate-400 leading-relaxed max-w-lg">
+          I help businesses transform their operations into next-generation, <strong class="text-slate-200">agent-led and AI-enabled workflows</strong>. Your team doesn't get replaced — they get <strong class="text-slate-200">superpowers</strong>.
         </p>
-        <div class="mt-6 flex flex-wrap gap-3">
-          <a href="https://calendar.app.google/5hsvLPKmr5MoQSKUA" class="px-5 py-3 bg-sky-600 text-white rounded-xl hover:bg-sky-700">Free 20-min Discovery Call</a>
-          <a href="#speaking" class="px-5 py-3 border border-slate-300 rounded-xl hover:bg-white">Book a Talk</a>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="https://calendar.app.google/5hsvLPKmr5MoQSKUA" class="px-6 py-3.5 bg-gradient-to-r from-violet-600 to-blue-500 text-white rounded-xl font-semibold hover:shadow-xl hover:shadow-violet-500/25 transition-all">
+            Free Discovery Call
+          </a>
+          <a href="#services" class="px-6 py-3.5 glass rounded-xl font-medium text-slate-300 hover:text-white transition-all">
+            Explore Services
+          </a>
         </div>
-        <p class="mt-3 text-sm text-slate-500">Specialised in <strong>software products only</strong> — web, mobile, SaaS.</p>
       </div>
 
-      <!-- Right column: headshot + value card -->
-      <div class="md:justify-self-end flex flex-col items-center gap-6">
-        <!-- Headshot -->
+      <!-- Right: photo + value card -->
+      <div class="flex flex-col items-center gap-8 animate-fade-in" style="animation-delay: 0.3s">
         <a href="https://www.linkedin.com/in/sergeivo/" target="_blank" rel="noopener" aria-label="Serge Ivo on LinkedIn">
-          <figure class="relative">
-            <span aria-hidden="true" class="absolute inset-0 rounded-full bg-gradient-to-tr from-sky-500/25 to-violet-600/25 blur-xl"></span>
+          <figure class="relative animate-float">
+            <span aria-hidden="true" class="absolute inset-0 rounded-full bg-gradient-to-tr from-violet-600/30 to-blue-500/30 blur-2xl animate-glow"></span>
             <img
               src="images/serge-ivo.jpg"
-              alt="Serge Ivo — Software Startup Coach & Motivational Speaker"
+              alt="Serge Ivo — AI Transformation Leader"
               width="320" height="320"
-              class="relative w-40 h-40 md:w-56 md:h-56 rounded-full object-cover ring-4 ring-white shadow-xl"
+              class="relative w-44 h-44 md:w-60 md:h-60 rounded-full object-cover ring-2 ring-violet-500/30 shadow-2xl"
               loading="eager" decoding="async"
             />
           </figure>
         </a>
 
-        <!-- What you get card -->
-        <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm w-full">
-          <h3 class="font-semibold">What you get</h3>
-          <ul class="mt-3 space-y-2 text-slate-600">
-            <li>• AI-assisted product strategy & de-risking</li>
-            <li>• Team formation playbook (volunteers, contractors, or hybrid)</li>
-            <li>• 2–4 week MVP sprint: scope, build, demo, iterate</li>
-            <li>• Launch stack: landing, onboarding, feedback loops</li>
-            <li>• GTM & traction experiments that fit your stage</li>
+        <div class="glass-bright rounded-2xl p-6 w-full max-w-sm card-lift">
+          <h3 class="font-bold text-white">What I bring to your business</h3>
+          <ul class="mt-4 space-y-3 text-slate-400 text-sm">
+            <li class="flex items-start gap-3">
+              <span class="mt-0.5 w-5 h-5 rounded-lg bg-violet-500/20 flex items-center justify-center flex-shrink-0"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <span>AI strategy & workflow transformation</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-0.5 w-5 h-5 rounded-lg bg-blue-500/20 flex items-center justify-center flex-shrink-0"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <span>AI agent design, setup & configuration</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-0.5 w-5 h-5 rounded-lg bg-emerald-500/20 flex items-center justify-center flex-shrink-0"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <span>Team coaching & hands-on enablement</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-0.5 w-5 h-5 rounded-lg bg-pink-500/20 flex items-center justify-center flex-shrink-0"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#f472b6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <span>Custom AI tools & integration coding</span>
+            </li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- AI Banner -->
-  <section id="events" class="mx-auto max-w-6xl px-4">
-    <div class="rounded-2xl border border-sky-200 bg-sky-50 p-6">
-      <h2 class="text-xl md:text-2xl font-bold">AI is a Double-Edged Sword — Use It to Build</h2>
-      <p class="mt-2 text-slate-700">
-        Yes, it’s tough out there as AI replaces repetitive work and some roles become redundant. But it also makes <em>builders</em> superhuman. The best time to build is now.
-      </p>
-      <p class="mt-2 text-slate-700">
-        Come to my events to get empowered, think outside the box, and start your path to success and prosperity.
-      </p>
-      <div class="mt-4 flex flex-wrap gap-3">
-        <a href="https://www.meetup.com/" class="px-5 py-3 bg-slate-900 text-white rounded-xl hover:bg-slate-800">Join on Meetup</a>
-        <a href="https://calendar.app.google/5hsvLPKmr5MoQSKUA" class="px-5 py-3 border border-slate-300 rounded-xl hover:bg-white">Book a Keynote/Workshop</a>
+  <!-- Empowerment Banner -->
+  <section class="mx-auto max-w-6xl px-4 mb-16">
+    <div class="relative overflow-hidden rounded-2xl border border-emerald-500/20" style="background: linear-gradient(135deg, rgba(52,211,153,0.08), rgba(59,130,246,0.08))">
+      <div class="absolute top-0 right-0 w-64 h-64 bg-emerald-500/5 rounded-full blur-3xl"></div>
+      <div class="relative p-8 md:p-10">
+        <h2 class="text-2xl md:text-3xl font-bold text-white">AI Won't Replace Your People. <span class="text-gradient">It Will Elevate Them.</span></h2>
+        <p class="mt-4 text-slate-400 text-lg max-w-2xl leading-relaxed">
+          The companies that win aren't replacing staff with AI — they're giving their people AI superpowers. I help your team embrace AI tools with confidence, so they become <strong class="text-slate-200">more valuable, more creative, and more productive</strong> than ever before.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-4">
+          <a href="https://calendar.app.google/5hsvLPKmr5MoQSKUA" class="px-5 py-3 bg-white/10 text-white rounded-xl font-medium hover:bg-white/15 transition-colors border border-white/10">Book a Keynote</a>
+          <a href="#speaking" class="px-5 py-3 text-emerald-400 hover:text-emerald-300 font-medium transition-colors">See Speaking Topics &rarr;</a>
+        </div>
       </div>
     </div>
   </section>
+
+  <div class="section-line mx-auto max-w-6xl"></div>
 
   <!-- Services -->
-  <section id="services" class="mx-auto max-w-6xl px-4 py-12">
-    <h2 class="text-2xl md:text-3xl font-bold">Services for Software Founders</h2>
-    <div class="mt-6 grid md:grid-cols-3 gap-6">
-      <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
-        <h3 class="font-semibold">AI-Powered Product Strategy</h3>
-        <p class="mt-2 text-slate-600">Clarify the problem, segment users, define must-have value, and turn assumptions into testable bets using AI-assisted research & synthesis.</p>
-        <ul class="mt-3 text-slate-600 space-y-1">
-          <li>• Lean problem/solution fit</li>
-          <li>• KPI & metric blueprint</li>
-          <li>• Risk map and experiments</li>
+  <section id="services" class="mx-auto max-w-6xl px-4 py-20">
+    <div class="text-center mb-14">
+      <span class="badge mb-4">Services</span>
+      <h2 class="text-3xl md:text-4xl font-bold text-white">End-to-End AI Transformation</h2>
+      <p class="mt-4 text-slate-400 text-lg max-w-2xl mx-auto">From strategy to hands-on implementation — everything your business needs to thrive in the AI era.</p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <div class="glass rounded-2xl p-7 card-lift border-glow">
+        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-violet-600/20 to-violet-600/5 flex items-center justify-center mb-5">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+        </div>
+        <h3 class="font-bold text-white text-lg">AI Strategy & Consulting</h3>
+        <p class="mt-3 text-slate-400 leading-relaxed">Assess your operations, identify high-impact AI opportunities, and build a practical transformation roadmap tailored to your business.</p>
+        <ul class="mt-4 space-y-2 text-sm text-slate-500">
+          <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-violet-500"></span>Operations audit & AI readiness</li>
+          <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-violet-500"></span>ROI-focused opportunity mapping</li>
+          <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-violet-500"></span>Phased implementation plan</li>
         </ul>
       </div>
-      <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
-        <h3 class="font-semibold">Team Formation & Delivery</h3>
-        <p class="mt-2 text-slate-600">Form a scrappy team (volunteers/contractors), define roles & rituals, and ship with modern web stacks.</p>
-        <ul class="mt-3 text-slate-600 space-y-1">
-          <li>• Sourcing & onboarding playbook</li>
-          <li>• Working agreements & reviews</li>
-          <li>• Tooling: GitHub, CI, issue flow</li>
+
+      <div class="glass rounded-2xl p-7 card-lift border-glow">
+        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600/20 to-blue-600/5 flex items-center justify-center mb-5">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+        </div>
+        <h3 class="font-bold text-white text-lg">AI Agent Design & Setup</h3>
+        <p class="mt-3 text-slate-400 leading-relaxed">Design, build, and deploy AI agents that handle real workflows — from customer support to internal ops, data processing to content creation.</p>
+        <ul class="mt-4 space-y-2 text-sm text-slate-500">
+          <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-blue-500"></span>Custom agent architecture</li>
+          <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-blue-500"></span>Tool & API integration</li>
+          <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-blue-500"></span>Testing, deployment & monitoring</li>
         </ul>
       </div>
-      <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
-        <h3 class="font-semibold">MVP Sprint & Launch</h3>
-        <p class="mt-2 text-slate-600">Scope a minimum lovable product, build fast, and launch with landing, onboarding, and feedback loops.</p>
-        <ul class="mt-3 text-slate-600 space-y-1">
-          <li>• 2–4 week sprint cadence</li>
-          <li>• Demo → iterate loop</li>
-          <li>• Early distribution & GTM</li>
+
+      <div class="glass rounded-2xl p-7 card-lift border-glow">
+        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-600/20 to-emerald-600/5 flex items-center justify-center mb-5">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3 class="font-bold text-white text-lg">Team Coaching & Enablement</h3>
+        <p class="mt-3 text-slate-400 leading-relaxed">Empower your staff to use AI tools confidently. Hands-on workshops, 1:1 coaching, and ongoing support that turns fear into excitement.</p>
+        <ul class="mt-4 space-y-2 text-sm text-slate-500">
+          <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-emerald-500"></span>Role-specific AI training</li>
+          <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-emerald-500"></span>Prompt engineering mastery</li>
+          <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-emerald-500"></span>Change management support</li>
         </ul>
       </div>
+
+      <div class="glass rounded-2xl p-7 card-lift border-glow">
+        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-pink-600/20 to-pink-600/5 flex items-center justify-center mb-5">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f472b6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <h3 class="font-bold text-white text-lg">AI-Powered Development</h3>
+        <p class="mt-3 text-slate-400 leading-relaxed">Custom AI integrations, automations, and tools built with modern stacks. From prototype to production — fast, clean, and maintainable.</p>
+        <ul class="mt-4 space-y-2 text-sm text-slate-500">
+          <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-pink-500"></span>AI-first app development</li>
+          <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-pink-500"></span>Workflow automation & APIs</li>
+          <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-pink-500"></span>LLM integration & fine-tuning</li>
+        </ul>
+      </div>
+
+      <div class="glass rounded-2xl p-7 card-lift border-glow">
+        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-600/20 to-amber-600/5 flex items-center justify-center mb-5">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </div>
+        <h3 class="font-bold text-white text-lg">AI Tools Configuration</h3>
+        <p class="mt-3 text-slate-400 leading-relaxed">Set up and configure the best AI tools for your team — Claude, ChatGPT, Copilot, automation platforms, and custom pipelines.</p>
+        <ul class="mt-4 space-y-2 text-sm text-slate-500">
+          <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-amber-500"></span>Tool selection & licensing</li>
+          <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-amber-500"></span>Security & governance setup</li>
+          <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-amber-500"></span>Custom workflows & templates</li>
+        </ul>
+      </div>
+
+      <div class="glass rounded-2xl p-7 card-lift border-glow">
+        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-600/20 to-cyan-600/5 flex items-center justify-center mb-5">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        </div>
+        <h3 class="font-bold text-white text-lg">Motivational Speaking</h3>
+        <p class="mt-3 text-slate-400 leading-relaxed">High-energy keynotes and workshops that inspire your team, kill AI anxiety, and spark a culture of innovation and experimentation.</p>
+        <ul class="mt-4 space-y-2 text-sm text-slate-500">
+          <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-cyan-500"></span>Corporate events & offsites</li>
+          <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-cyan-500"></span>Team kickoffs & all-hands</li>
+          <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-cyan-500"></span>Conference keynotes</li>
+        </ul>
+      </div>
+
     </div>
   </section>
+
+  <div class="section-line mx-auto max-w-6xl"></div>
 
   <!-- Speaking -->
-  <section id="speaking" class="mx-auto max-w-6xl px-4 py-12">
-    <h2 class="text-2xl md:text-3xl font-bold">Motivational Speaking — Inspire Builders</h2>
-    <p class="mt-2 text-slate-600">
-      High-energy, practical talks that push people beyond comfort zones — so they leave ready to build.
-    </p>
-    <div class="mt-6 grid md:grid-cols-3 gap-6">
-      <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
-        <h3 class="font-semibold">Keynote: The Builder’s Edge</h3>
-        <p class="mt-2 text-slate-600">AI replaces tasks, not ambition. Turn today’s tools into unfair advantage and ship your first version now.</p>
-        <ul class="mt-3 text-slate-600 space-y-1">
-          <li>• Mindset: curiosity, speed, iteration</li>
-          <li>• Tooling: AI co-dev, content, GTM</li>
-          <li>• Action plan: 7-day build challenge</li>
-        </ul>
-      </div>
-      <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
-        <h3 class="font-semibold">Workshop: MVP in 2 Weeks</h3>
-        <p class="mt-2 text-slate-600">Define scope, assemble a lean team, and stand up a functional prototype with AI assistance.</p>
-        <ul class="mt-3 text-slate-600 space-y-1">
-          <li>• Scope slicing & acceptance criteria</li>
-          <li>• Delivery rituals & demo cadence</li>
-          <li>• Launch checklist</li>
-        </ul>
-      </div>
-      <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
-        <h3 class="font-semibold">Talk: Think Outside the Box</h3>
-        <p class="mt-2 text-slate-600">Mental models to challenge assumptions, spark ideas, and design bold software bets worth testing.</p>
-        <ul class="mt-3 text-slate-600 space-y-1">
-          <li>• Reframe problems</li>
-          <li>• Run tiny experiments</li>
-          <li>• Learn fast, adapt faster</li>
-        </ul>
-      </div>
+  <section id="speaking" class="mx-auto max-w-6xl px-4 py-20">
+    <div class="text-center mb-14">
+      <span class="badge mb-4">Speaking</span>
+      <h2 class="text-3xl md:text-4xl font-bold text-white">Talks That Transform Mindsets</h2>
+      <p class="mt-4 text-slate-400 text-lg max-w-2xl mx-auto">High-energy sessions that turn AI anxiety into excitement and give your team the confidence to lead in the AI era.</p>
     </div>
-    <div class="mt-6 flex flex-wrap gap-3">
-      <a href="https://calendar.app.google/5hsvLPKmr5MoQSKUA" class="px-5 py-3 bg-sky-600 text-white rounded-xl hover:bg-sky-700">Book a Talk</a>
-      <a href="https://www.linkedin.com/in/sergeivo/" class="px-5 py-3 border border-slate-300 rounded-xl hover:bg-white" rel="noopener">DM me on LinkedIn</a>
-    </div>
-  </section>
+    <div class="grid md:grid-cols-3 gap-6">
 
-  <!-- Packages: Weekly Subscriptions (no lock-in) -->
-  <section id="packages" class="mx-auto max-w-6xl px-4 py-12">
-    <h2 class="text-2xl md:text-3xl font-bold">Packages — Weekly, No Lock-In (AUD)</h2>
-    <p class="mt-2 text-slate-600">
-      Mentoring & advisory by default — <strong>not a partner</strong>. Billed weekly, cancel/pause anytime. Upgrade/downgrade week-to-week.
-    </p>
-    <div class="mt-6 grid md:grid-cols-3 gap-6">
-      <!-- Tier 1 -->
-      <div class="bg-white border border-sky-200 rounded-2xl p-6 shadow-sm">
-        <h3 class="font-semibold">Advisor Lite</h3>
-        <p class="text-slate-600 mt-1">Low-touch guidance</p>
-        <p class="text-3xl font-bold mt-4">$150<span class="text-base font-medium text-slate-500">/week</span></p>
-        <ul class="mt-4 text-slate-600 space-y-1">
-          <li>• 30–45 min live coaching / week</li>
-          <li>• Async feedback on docs</li>
-          <li>• Clear next-step checklist</li>
+      <div class="glass rounded-2xl p-7 card-lift border-glow">
+        <div class="text-xs font-semibold text-violet-400 uppercase tracking-wider mb-3">Keynote</div>
+        <h3 class="font-bold text-white text-xl">The AI-Empowered Team</h3>
+        <p class="mt-3 text-slate-400 leading-relaxed">Why the future belongs to humans + AI working together. Your people are about to become the most valuable they've ever been.</p>
+        <ul class="mt-4 space-y-2 text-sm text-slate-500">
+          <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-violet-500"></span>From fear to excitement — the mindset shift</li>
+          <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-violet-500"></span>Real examples of AI-augmented teams</li>
+          <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-violet-500"></span>Your 30-day AI adoption kickstart</li>
         </ul>
-        <p class="mt-3 text-xs text-slate-500">Role: Advisor/Mentor (not partner)</p>
-        <a href="https://calendar.app.google/5hsvLPKmr5MoQSKUA" class="mt-5 inline-block w-full text-center bg-slate-900 text-white px-4 py-2 rounded-xl hover:bg-slate-800">Start Weekly</a>
       </div>
 
-      <!-- Tier 2 -->
-      <div class="bg-white border border-sky-200 rounded-2xl p-6 shadow-sm">
-        <h3 class="font-semibold">Advisor Core</h3>
-        <p class="text-slate-600 mt-1">Hands-on advisory</p>
-        <p class="text-3xl font-bold mt-4">$390<span class="text-base font-medium text-slate-500">/week</span></p>
-        <ul class="mt-4 text-slate-600 space-y-1">
-          <li>• 1×60 min + 1×30 min live / week</li>
-          <li>• Backlog & scope reviews</li>
-          <li>• Risk map & experiment design</li>
+      <div class="glass rounded-2xl p-7 card-lift border-glow">
+        <div class="text-xs font-semibold text-blue-400 uppercase tracking-wider mb-3">Workshop</div>
+        <h3 class="font-bold text-white text-xl">AI Agents in Action</h3>
+        <p class="mt-3 text-slate-400 leading-relaxed">Hands-on workshop where your team builds their first AI agents. Walk out with working automations, not just slides.</p>
+        <ul class="mt-4 space-y-2 text-sm text-slate-500">
+          <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-blue-500"></span>Build a real agent in 90 minutes</li>
+          <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-blue-500"></span>Prompt engineering essentials</li>
+          <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-blue-500"></span>Tools, templates & next steps</li>
         </ul>
-        <p class="mt-3 text-xs text-slate-500">Role: Advisor/Mentor (not partner)</p>
-        <a href="https://calendar.app.google/5hsvLPKmr5MoQSKUA" class="mt-5 inline-block w-full text-center bg-sky-600 text-white px-4 py-2 rounded-xl hover:bg-sky-700">Book Core</a>
       </div>
 
-      <!-- Tier 3 -->
-      <div class="bg-white border border-sky-200 rounded-2xl p-6 shadow-sm">
-        <h3 class="font-semibold">Advisor Intensive</h3>
-        <p class="text-slate-600 mt-1">Deep involvement</p>
-        <p class="text-3xl font-bold mt-4">$890<span class="text-base font-medium text-slate-500">/week</span></p>
-        <ul class="mt-4 text-slate-600 space-y-1">
-          <li>• Up to ~4 hrs involvement / week</li>
-          <li>• Sprint planning & ceremonies</li>
-          <li>• Demo cadence & GTM support</li>
+      <div class="glass rounded-2xl p-7 card-lift border-glow">
+        <div class="text-xs font-semibold text-emerald-400 uppercase tracking-wider mb-3">Fireside / Talk</div>
+        <h3 class="font-bold text-white text-xl">Think Outside the Algorithm</h3>
+        <p class="mt-3 text-slate-400 leading-relaxed">Creative thinking meets AI. How to ask better questions, challenge assumptions, and use AI as your thinking partner.</p>
+        <ul class="mt-4 space-y-2 text-sm text-slate-500">
+          <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-emerald-500"></span>Mental models for the AI age</li>
+          <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-emerald-500"></span>Creative problem-solving with AI</li>
+          <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-emerald-500"></span>Building an innovation culture</li>
         </ul>
-        <p class="mt-3 text-xs text-slate-500">Role: Advisor/Mentor (not partner)</p>
-        <a href="https://calendar.app.google/5hsvLPKmr5MoQSKUA" class="mt-5 inline-block w-full text-center border border-slate-300 px-4 py-2 rounded-xl hover:bg-white">Talk Scope</a>
       </div>
+
     </div>
-    <div class="mt-6 text-slate-600">
-      <p>One-off help? <strong>$150 / 60-min session</strong>. <a class="text-sky-700 underline" href="https://calendar.app.google/5hsvLPKmr5MoQSKUA">Book a session</a>.</p>
-      <p class="text-xs mt-2">Billed weekly. Cancel/pause anytime. Prices incl. GST where applicable.</p>
+    <div class="mt-10 flex flex-wrap gap-4 justify-center">
+      <a href="https://calendar.app.google/5hsvLPKmr5MoQSKUA" class="px-6 py-3.5 bg-gradient-to-r from-violet-600 to-blue-500 text-white rounded-xl font-semibold hover:shadow-xl hover:shadow-violet-500/25 transition-all">Book a Talk</a>
+      <a href="https://www.linkedin.com/in/sergeivo/" class="px-6 py-3.5 glass rounded-xl font-medium text-slate-300 hover:text-white transition-all" rel="noopener">DM on LinkedIn</a>
     </div>
   </section>
 
-  <!-- Partnering (Selective Co-Founder) -->
-  <section id="partnership" class="mx-auto max-w-6xl px-4 py-12">
-    <h2 class="text-2xl md:text-3xl font-bold">Partner with Serge (Selective Co-Founder)</h2>
-    <p class="mt-2 text-slate-600">
-      Separate from mentoring: in a few cases I join as <strong>co-founder</strong>. We agree roles, decision rights, and incentives up-front.
-    </p>
-    <div class="mt-6 grid md:grid-cols-2 gap-6">
-      <div class="bg-white border border-emerald-200 rounded-2xl p-6 shadow-sm">
-        <h3 class="font-semibold">You’re Non-Technical</h3>
-        <p class="mt-2 text-slate-600">
-          I become your product/tech co-founder. You’ll have your own <strong>tech team organised by me</strong> to build your product. We target a fast MVP, validate, and iterate.
+  <div class="section-line mx-auto max-w-6xl"></div>
+
+  <!-- Packages -->
+  <section id="packages" class="mx-auto max-w-6xl px-4 py-20">
+    <div class="text-center mb-14">
+      <span class="badge mb-4">Packages</span>
+      <h2 class="text-3xl md:text-4xl font-bold text-white">Flexible Engagement — No Lock-In</h2>
+      <p class="mt-4 text-slate-400 text-lg">Weekly billing. Pause or cancel anytime. Scale up or down as you need. <span class="text-slate-500">(AUD)</span></p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <!-- Tier 1: Coaching -->
+      <div class="glass rounded-2xl p-7 card-lift">
+        <h3 class="font-bold text-white text-lg">AI Coach</h3>
+        <p class="text-slate-500 mt-1 text-sm">Learn & adopt AI with guidance</p>
+        <p class="text-4xl font-black text-white mt-5">$490<span class="text-base font-medium text-slate-500">/week</span></p>
+        <p class="text-xs text-slate-600 mt-1">~2 hrs / week</p>
+        <div class="mt-5 mb-6 h-px bg-white/5"></div>
+        <ul class="space-y-3 text-sm text-slate-400">
+          <li class="flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>1x60 min strategy session / week</li>
+          <li class="flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>1x30 min follow-up coaching call</li>
+          <li class="flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>AI tool recommendations & setup guide</li>
+          <li class="flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Async feedback between sessions</li>
+          <li class="flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Action plan & progress tracking</li>
+        </ul>
+        <p class="mt-5 text-xs text-slate-600">Best for: leaders exploring AI, teams starting their AI journey</p>
+        <a href="https://calendar.app.google/5hsvLPKmr5MoQSKUA" class="mt-5 block text-center px-5 py-3 glass rounded-xl font-medium text-slate-300 hover:text-white transition-all">Get Started</a>
+      </div>
+
+      <!-- Tier 2: Build (featured) -->
+      <div class="relative rounded-2xl p-7 card-lift" style="background: linear-gradient(135deg, rgba(124,58,237,0.12), rgba(59,130,246,0.12)); border: 1px solid rgba(124,58,237,0.3);">
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2 text-xs font-bold text-white bg-gradient-to-r from-violet-600 to-blue-500 px-4 py-1 rounded-full">Most Popular</div>
+        <h3 class="font-bold text-white text-lg">AI Builder</h3>
+        <p class="text-slate-500 mt-1 text-sm">Hands-on setup & implementation</p>
+        <p class="text-4xl font-black text-white mt-5">$990<span class="text-base font-medium text-slate-500">/week</span></p>
+        <p class="text-xs text-slate-600 mt-1">~5 hrs / week</p>
+        <div class="mt-5 mb-6 h-px bg-white/10"></div>
+        <ul class="space-y-3 text-sm text-slate-400">
+          <li class="flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Everything in AI Coach</li>
+          <li class="flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>AI workflow design & architecture</li>
+          <li class="flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Hands-on agent setup & configuration</li>
+          <li class="flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Tool integration & automation builds</li>
+          <li class="flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Team enablement workshops</li>
+          <li class="flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Slack/Teams support between sessions</li>
+        </ul>
+        <p class="mt-5 text-xs text-slate-600">Best for: businesses deploying their first AI agents & workflows</p>
+        <a href="https://calendar.app.google/5hsvLPKmr5MoQSKUA" class="mt-5 block text-center px-5 py-3 bg-gradient-to-r from-violet-600 to-blue-500 text-white rounded-xl font-semibold hover:shadow-lg hover:shadow-violet-500/25 transition-all">Book This</a>
+      </div>
+
+      <!-- Tier 3: Transform -->
+      <div class="glass rounded-2xl p-7 card-lift">
+        <h3 class="font-bold text-white text-lg">AI Transformation</h3>
+        <p class="text-slate-500 mt-1 text-sm">Full embedded AI partner</p>
+        <p class="text-4xl font-black text-white mt-5">$1,890<span class="text-base font-medium text-slate-500">/week</span></p>
+        <p class="text-xs text-slate-600 mt-1">~10 hrs / week</p>
+        <div class="mt-5 mb-6 h-px bg-white/5"></div>
+        <ul class="space-y-3 text-sm text-slate-400">
+          <li class="flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Everything in AI Builder</li>
+          <li class="flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Full operations audit & transformation plan</li>
+          <li class="flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Custom AI coding & development</li>
+          <li class="flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Multi-agent systems & orchestration</li>
+          <li class="flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Organisation-wide enablement program</li>
+          <li class="flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Priority access & same-day responses</li>
+        </ul>
+        <p class="mt-5 text-xs text-slate-600">Best for: companies going all-in on AI transformation</p>
+        <a href="https://calendar.app.google/5hsvLPKmr5MoQSKUA" class="mt-5 block text-center px-5 py-3 glass rounded-xl font-medium text-slate-300 hover:text-white transition-all">Discuss Scope</a>
+      </div>
+
+    </div>
+    <p class="mt-8 text-center text-slate-500 text-sm">Need a one-off session? <strong class="text-slate-300">$250 / 60 minutes</strong>. <a class="text-violet-400 hover:text-violet-300" href="https://calendar.app.google/5hsvLPKmr5MoQSKUA">Book a session</a>. All prices AUD, incl. GST where applicable.</p>
+  </section>
+
+  <div class="section-line mx-auto max-w-6xl"></div>
+
+  <!-- Partnering -->
+  <section id="partnership" class="mx-auto max-w-6xl px-4 py-20">
+    <div class="text-center mb-14">
+      <span class="badge mb-4">Partnering</span>
+      <h2 class="text-3xl md:text-4xl font-bold text-white">Strategic AI Partnerships</h2>
+      <p class="mt-4 text-slate-400 text-lg max-w-2xl mx-auto">For select businesses ready for deep AI transformation — I embed with your team as a hands-on AI transformation partner.</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="glass rounded-2xl p-7 card-lift" style="border-color: rgba(52,211,153,0.15);">
+        <div class="text-xs font-semibold text-emerald-400 uppercase tracking-wider mb-3">For Business Leaders</div>
+        <h3 class="font-bold text-white text-xl">Enterprise AI Transformation</h3>
+        <p class="mt-3 text-slate-400 leading-relaxed">
+          I become your embedded AI transformation lead. Together we redesign workflows, deploy agents, upskill your team, and measure real business impact.
         </p>
-        <ul class="mt-3 text-slate-600 space-y-1">
-          <li>• Team sourcing/hiring & delivery leadership</li>
-          <li>• Product strategy, scope, and launch</li>
-          <li>• Equity / rev-share structure; modest retainer</li>
+        <ul class="mt-4 space-y-2 text-sm text-slate-500">
+          <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-emerald-500"></span>Full operations audit & transformation plan</li>
+          <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-emerald-500"></span>Agent deployment & team training</li>
+          <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-emerald-500"></span>Outcome-based engagement structure</li>
         </ul>
-        <a href="https://calendar.app.google/5hsvLPKmr5MoQSKUA" class="mt-5 inline-block w-full text-center bg-slate-900 text-white px-4 py-2 rounded-xl hover:bg-slate-800">Discuss Partnership</a>
+        <a href="https://calendar.app.google/5hsvLPKmr5MoQSKUA" class="mt-6 inline-block px-5 py-3 bg-gradient-to-r from-emerald-600 to-emerald-500 text-white rounded-xl font-medium hover:shadow-lg hover:shadow-emerald-500/20 transition-all">Discuss Partnership</a>
       </div>
-      <div class="bg-white border border-emerald-200 rounded-2xl p-6 shadow-sm">
-        <h3 class="font-semibold">You’re Technical</h3>
-        <p class="mt-2 text-slate-600">
-          Learn to <strong>build without funding</strong>: recruit volunteers, ship with near-zero cost, and use <strong>zero-cost hosting options</strong> where possible.
+      <div class="glass rounded-2xl p-7 card-lift" style="border-color: rgba(96,165,250,0.15);">
+        <div class="text-xs font-semibold text-blue-400 uppercase tracking-wider mb-3">For Founders & Startups</div>
+        <h3 class="font-bold text-white text-xl">AI-First Product Partnership</h3>
+        <p class="mt-3 text-slate-400 leading-relaxed">
+          Building an AI-powered product? I partner as your technical AI co-founder — architecture, agent design, development, and go-to-market.
         </p>
-        <ul class="mt-3 text-slate-600 space-y-1">
-          <li>• Volunteer team playbook & rituals</li>
-          <li>• Delivery focus with fast demo cadence</li>
-          <li>• Equity / rev-share aligned to outcomes</li>
+        <ul class="mt-4 space-y-2 text-sm text-slate-500">
+          <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-blue-500"></span>AI product strategy & architecture</li>
+          <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-blue-500"></span>Hands-on development & launch</li>
+          <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-blue-500"></span>Equity / rev-share aligned to outcomes</li>
         </ul>
-        <a href="https://calendar.app.google/5hsvLPKmr5MoQSKUA" class="mt-5 inline-block w-full text-center bg-sky-600 text-white px-4 py-2 rounded-xl hover:bg-sky-700">Explore Fit</a>
+        <a href="https://calendar.app.google/5hsvLPKmr5MoQSKUA" class="mt-6 inline-block px-5 py-3 glass text-slate-300 rounded-xl font-medium hover:text-white transition-all">Explore Fit</a>
       </div>
     </div>
-    <p class="mt-4 text-xs text-slate-500">Partnerships are limited and subject to mutual due diligence.</p>
+    <p class="mt-6 text-center text-xs text-slate-600">Partnerships are limited and subject to mutual due diligence.</p>
   </section>
 
-  <!-- Startups & Communities (no logos, detailed cards) -->
-  <section id="startups" class="px-4 py-12">
-    <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-16">
-        <h3 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Startups & Communities</h3>
-        <div class="w-24 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto mb-8"></div>
-        <p class="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-          Selected initiatives I’ve built or advised.
-        </p>
+  <div class="section-line mx-auto max-w-6xl"></div>
+
+  <!-- Portfolio -->
+  <section id="portfolio" class="mx-auto max-w-6xl px-4 py-20">
+    <div class="text-center mb-14">
+      <span class="badge mb-4">Portfolio</span>
+      <h2 class="text-3xl md:text-4xl font-bold text-white">Built with AI</h2>
+      <p class="mt-4 text-slate-400 text-lg max-w-2xl mx-auto">Products and platforms I've built or advised — all leveraging AI throughout the stack.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+
+      <div class="glass rounded-2xl p-6 card-lift">
+        <div class="flex items-start justify-between mb-3">
+          <div>
+            <a href="https://jobsearch.works/" target="_blank" class="text-lg font-bold text-gradient hover:opacity-80 transition-opacity">JobSearchWorks</a>
+            <div class="text-xs text-slate-600 mt-0.5">jobsearch.works</div>
+          </div>
+          <span class="text-xs px-2 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20">AI SaaS</span>
+        </div>
+        <p class="text-sm text-slate-400">AI-powered job application system — tailors resumes, finds roles, and tracks progress automatically.</p>
+        <div class="mt-4">
+          <div class="flex justify-between text-xs text-slate-600 mb-1"><span>Idea</span><span>MVP</span><span>Revenue</span></div>
+          <div class="flex w-full h-1.5 rounded-full overflow-hidden bg-white/5">
+            <div class="h-full rounded-full" style="width:61%;background:linear-gradient(to right,#a78bfa,#60a5fa);"></div>
+          </div>
+        </div>
       </div>
 
-      <div class="flex flex-col gap-12 items-center">
-
-        <!-- JobSearchWorks -->
-        <div class="bg-white rounded-2xl p-6 sm:p-8 border border-blue-100 card-hover max-w-4xl w-full">
-          <div class="flex flex-col sm:flex-row gap-6">
-            <div class="sm:w-40 flex-shrink-0 text-center sm:text-left">
-              <a href="https://jobsearch.works/" target="_blank" class="text-lg sm:text-xl font-semibold text-gradient">JobSearchWorks</a>
-              <div class="text-xs text-slate-500 mt-1">jobsearch.works</div>
-            </div>
-            <div class="flex-1 text-sm sm:text-base">
-              <ul class="space-y-3 text-gray-700 leading-relaxed">
-                <li class="flex items-start gap-2"><span class="mt-1">✓</span><span>Apply once — the system handles tailored submissions.</span></li>
-                <li class="flex items-start gap-2"><span class="mt-1">✓</span><span>AI finds roles, adapts your resume, and tracks progress.</span></li>
-                <li class="flex items-start gap-2"><span class="mt-1">✓</span><span>No contracts — pay per application.</span></li>
-              </ul>
-              <div class="mt-4">
-                <div class="flex justify-between text-xs text-gray-500 mb-1"><span>Idea</span><span>Prototype</span><span>Team</span><span>MVP</span><span>Go Live</span><span>First Client</span><span>Revenue</span></div>
-                <div class="flex w-full h-2 rounded overflow-hidden bg-gray-200">
-                  <div class="h-2" style="width:61%;background:linear-gradient(to right,#3b82f6,#8b5cf6);"></div>
-                  <div class="bg-gray-300 h-2" style="width:39%;"></div>
-                </div>
-              </div>
-            </div>
+      <div class="glass rounded-2xl p-6 card-lift">
+        <div class="flex items-start justify-between mb-3">
+          <div>
+            <a href="https://quicksite.space/" target="_blank" class="text-lg font-bold text-gradient hover:opacity-80 transition-opacity">QuickSite</a>
+            <div class="text-xs text-slate-600 mt-0.5">quicksite.space</div>
+          </div>
+          <span class="text-xs px-2 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">AI Builder</span>
+        </div>
+        <p class="text-sm text-slate-400">AI-powered website builder — launch a site in minutes with no coding, one-click deploy.</p>
+        <div class="mt-4">
+          <div class="flex justify-between text-xs text-slate-600 mb-1"><span>Idea</span><span>MVP</span><span>Revenue</span></div>
+          <div class="flex w-full h-1.5 rounded-full overflow-hidden bg-white/5">
+            <div class="h-full rounded-full" style="width:51%;background:linear-gradient(to right,#34d399,#059669);"></div>
           </div>
         </div>
+      </div>
 
-        <!-- QuickSite -->
-        <div class="bg-white rounded-2xl p-6 sm:p-8 border border-emerald-100 card-hover max-w-4xl w-full">
-          <div class="flex flex-col sm:flex-row gap-6">
-            <div class="sm:w-40 flex-shrink-0 text-center sm:text-left">
-              <a href="https://quicksite.space/" target="_blank" class="text-lg sm:text-xl font-semibold text-gradient">QuickSite</a>
-              <div class="text-xs text-slate-500 mt-1">quicksite.space</div>
-            </div>
-            <div class="flex-1 text-sm sm:text-base">
-              <ul class="space-y-3 text-gray-700 leading-relaxed">
-                <li class="flex items-start gap-2"><span class="mt-1">✓</span><span>Launch a website in minutes — no coding needed.</span></li>
-                <li class="flex items-start gap-2"><span class="mt-1">✓</span><span>AI-powered setup with fast, secure hosting.</span></li>
-                <li class="flex items-start gap-2"><span class="mt-1">✓</span><span>One-click deployment for instant go-live.</span></li>
-              </ul>
-              <div class="mt-4">
-                <div class="flex justify-between text-xs text-gray-500 mb-1"><span>Idea</span><span>Prototype</span><span>Team</span><span>MVP</span><span>Go Live</span><span>First Client</span><span>Revenue</span></div>
-                <div class="flex w-full h-2 rounded overflow-hidden bg-gray-200">
-                  <div class="h-2" style="width:51%;background:linear-gradient(to right,#34D399,#059669);"></div>
-                  <div class="bg-gray-300 h-2" style="width:49%;"></div>
-                </div>
-              </div>
-            </div>
+      <div class="glass rounded-2xl p-6 card-lift">
+        <div class="flex items-start justify-between mb-3">
+          <div>
+            <a href="https://talenthub.show/" target="_blank" class="text-lg font-bold text-gradient hover:opacity-80 transition-opacity">TalentHub</a>
+            <div class="text-xs text-slate-600 mt-0.5">talenthub.show</div>
+          </div>
+          <span class="text-xs px-2 py-1 rounded-full bg-pink-500/10 text-pink-400 border border-pink-500/20">AI Matching</span>
+        </div>
+        <p class="text-sm text-slate-400">Video profiles + AI analysis that highlights candidate strengths and matches them to employers.</p>
+        <div class="mt-4">
+          <div class="flex justify-between text-xs text-slate-600 mb-1"><span>Idea</span><span>MVP</span><span>Revenue</span></div>
+          <div class="flex w-full h-1.5 rounded-full overflow-hidden bg-white/5">
+            <div class="h-full rounded-full" style="width:50%;background:linear-gradient(to right,#f472b6,#a78bfa);"></div>
           </div>
         </div>
+      </div>
 
-        <!-- TalentHub -->
-        <div class="bg-white rounded-2xl p-6 sm:p-8 border border-pink-100 card-hover max-w-4xl w-full">
-          <div class="flex flex-col sm:flex-row gap-6">
-            <div class="sm:w-40 flex-shrink-0 text-center sm:text-left">
-              <a href="https://talenthub.show/" target="_blank" class="text-lg sm:text-xl font-semibold text-gradient">TalentHub</a>
-              <div class="text-xs text-slate-500 mt-1">talenthub.show</div>
-            </div>
-            <div class="flex-1 text-sm sm:text-base">
-              <ul class="space-y-3 text-gray-700 leading-relaxed">
-                <li class="flex items-start gap-2"><span class="mt-1">✓</span><span>Video intros + living profile that shows real skills.</span></li>
-                <li class="flex items-start gap-2"><span class="mt-1">✓</span><span>AI analyses interviews to highlight strengths.</span></li>
-                <li class="flex items-start gap-2"><span class="mt-1">✓</span><span>Connect directly with top employers.</span></li>
-              </ul>
-              <div class="mt-4">
-                <div class="flex justify-between text-xs text-gray-500 mb-1"><span>Idea</span><span>Prototype</span><span>Team</span><span>MVP</span><span>Go Live</span><span>First Client</span><span>Revenue</span></div>
-                <div class="flex w-full h-2 rounded overflow-hidden bg-gray-200">
-                  <div class="h-2" style="width:50%;background:linear-gradient(to right,#3b82f6,#8b5cf6);"></div>
-                  <div class="bg-gray-300 h-2" style="width:50%;"></div>
-                </div>
-              </div>
-            </div>
+      <div class="glass rounded-2xl p-6 card-lift">
+        <div class="flex items-start justify-between mb-3">
+          <div>
+            <a href="https://buildless.online/" target="_blank" class="text-lg font-bold text-gradient hover:opacity-80 transition-opacity">Buildless</a>
+            <div class="text-xs text-slate-600 mt-0.5">buildless.online</div>
+          </div>
+          <span class="text-xs px-2 py-1 rounded-full bg-violet-500/10 text-violet-400 border border-violet-500/20">Dev Tool</span>
+        </div>
+        <p class="text-sm text-slate-400">Build apps with JSON & JavaScript — no HTML, no build tools. Auth & real-time data built-in.</p>
+        <div class="mt-4">
+          <div class="flex justify-between text-xs text-slate-600 mb-1"><span>Idea</span><span>MVP</span><span>Revenue</span></div>
+          <div class="flex w-full h-1.5 rounded-full overflow-hidden bg-white/5">
+            <div class="h-full rounded-full" style="width:50%;background:linear-gradient(to right,#a78bfa,#60a5fa);"></div>
           </div>
         </div>
+      </div>
 
-        <!-- ArtOut -->
-        <div class="bg-white rounded-2xl p-6 sm:p-8 border border-indigo-100 card-hover max-w-4xl w-full">
-          <div class="flex flex-col sm:flex-row gap-6">
-            <div class="sm:w-40 flex-shrink-0 text-center sm:text-left">
-              <a href="https://artout.site/" target="_blank" class="text-lg sm:text-xl font-semibold text-gradient">ArtOut</a>
-              <div class="text-xs text-slate-500 mt-1">artout.site</div>
-            </div>
-            <div class="flex-1 text-sm sm:text-base">
-              <ul class="space-y-3 text-gray-700 leading-relaxed">
-                <li class="flex items-start gap-2"><span class="mt-1">✓</span><span>Capture street art live — no uploads or filters.</span></li>
-                <li class="flex items-start gap-2"><span class="mt-1">✓</span><span>Snap and geotag graffiti and murals instantly.</span></li>
-                <li class="flex items-start gap-2"><span class="mt-1">✓</span><span>Explore a global map of urban creativity.</span></li>
-              </ul>
-              <div class="mt-4">
-                <div class="flex justify-between text-xs text-gray-500 mb-1"><span>Idea</span><span>Prototype</span><span>Team</span><span>MVP</span><span>Go Live</span><span>First Client</span><span>Revenue</span></div>
-                <div class="flex w-full h-2 rounded overflow-hidden bg-gray-200">
-                  <div class="h-2" style="width:21%;background:linear-gradient(to right,#a78bfa,#7c3aed);"></div>
-                  <div class="bg-gray-300 h-2" style="width:79%;"></div>
-                </div>
-              </div>
-            </div>
+      <div class="glass rounded-2xl p-6 card-lift">
+        <div class="flex items-start justify-between mb-3">
+          <div>
+            <a href="https://seedstart.world/" target="_blank" class="text-lg font-bold text-gradient hover:opacity-80 transition-opacity">SeedStart</a>
+            <div class="text-xs text-slate-600 mt-0.5">seedstart.world</div>
+          </div>
+          <span class="text-xs px-2 py-1 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">Platform</span>
+        </div>
+        <p class="text-sm text-slate-400">Startup acceleration platform — turn ideas into reality with AI-powered tools and community support.</p>
+        <div class="mt-4">
+          <div class="flex justify-between text-xs text-slate-600 mb-1"><span>Idea</span><span>MVP</span><span>Revenue</span></div>
+          <div class="flex w-full h-1.5 rounded-full overflow-hidden bg-white/5">
+            <div class="h-full rounded-full" style="width:45%;background:linear-gradient(to right,#22d3ee,#34d399);"></div>
           </div>
         </div>
+      </div>
 
-        <!-- GrassKarma -->
-        <div class="bg-white rounded-2xl p-6 sm:p-8 border border-emerald-100 card-hover max-w-4xl w-full">
-          <div class="flex flex-col sm:flex-row gap-6">
-            <div class="sm:w-40 flex-shrink-0 text-center sm:text-left">
-              <a href="https://grasskarma.website/" target="_blank" class="text-lg sm:text-xl font-semibold text-gradient">GrassKarma</a>
-              <div class="text-xs text-slate-500 mt-1">grasskarma.website</div>
-            </div>
-            <div class="flex-1 text-sm sm:text-base">
-              <ul class="space-y-3 text-gray-700 leading-relaxed">
-                <li class="flex items-start gap-2"><span class="mt-1">✓</span><span>Share the mow; team up with neighbours and split costs.</span></li>
-                <li class="flex items-start gap-2"><span class="mt-1">✓</span><span>Keep lawns sharp with reminders and group deals.</span></li>
-              </ul>
-              <div class="mt-4">
-                <div class="flex justify-between text-xs text-gray-500 mb-1"><span>Idea</span><span>Prototype</span><span>Team</span><span>MVP</span><span>Go Live</span><span>First Client</span><span>Revenue</span></div>
-                <div class="flex w-full h-2 rounded overflow-hidden bg-gray-200">
-                  <div class="h-2" style="width:21%;background:linear-gradient(to right,#34d399,#059669);"></div>
-                  <div class="bg-gray-300 h-2" style="width:79%;"></div>
-                </div>
-              </div>
-            </div>
+      <div class="glass rounded-2xl p-6 card-lift">
+        <div class="flex items-start justify-between mb-3">
+          <div>
+            <a href="https://artout.site/" target="_blank" class="text-lg font-bold text-gradient hover:opacity-80 transition-opacity">ArtOut</a>
+            <div class="text-xs text-slate-600 mt-0.5">artout.site</div>
+          </div>
+          <span class="text-xs px-2 py-1 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20">Community</span>
+        </div>
+        <p class="text-sm text-slate-400">Street art discovery — snap, geotag, and explore a global map of urban creativity powered by AI.</p>
+        <div class="mt-4">
+          <div class="flex justify-between text-xs text-slate-600 mb-1"><span>Idea</span><span>MVP</span><span>Revenue</span></div>
+          <div class="flex w-full h-1.5 rounded-full overflow-hidden bg-white/5">
+            <div class="h-full rounded-full" style="width:21%;background:linear-gradient(to right,#fbbf24,#f59e0b);"></div>
           </div>
         </div>
+      </div>
 
-        <!-- SeedStart -->
-        <div class="bg-white rounded-2xl p-6 sm:p-8 border border-teal-100 card-hover max-w-4xl w-full">
-          <div class="flex flex-col sm:flex-row gap-6">
-            <div class="sm:w-40 flex-shrink-0 text-center sm:text-left">
-              <a href="https://seedstart.world/" target="_blank" class="text-lg sm:text-xl font-semibold text-gradient">SeedStart</a>
-              <div class="text-xs text-slate-500 mt-1">seedstart.world</div>
-            </div>
-            <div class="flex-1 text-sm sm:text-base">
-              <ul class="space-y-3 text-gray-700 leading-relaxed">
-                <li class="flex items-start gap-2"><span class="mt-1">✓</span><span>Turn ideas into reality with tools & guidance.</span></li>
-                <li class="flex items-start gap-2"><span class="mt-1">✓</span><span>Build teams and launch fast with support.</span></li>
-              </ul>
-              <div class="mt-4">
-                <div class="flex justify-between text-xs text-gray-500 mb-1"><span>Idea</span><span>Prototype</span><span>Team</span><span>MVP</span><span>Go Live</span><span>First Client</span><span>Revenue</span></div>
-                <div class="flex w-full h-2 rounded overflow-hidden bg-gray-200">
-                  <div class="h-2" style="width:45%;background:linear-gradient(to right,#60a5fa,#10b981);"></div>
-                  <div class="bg-gray-300 h-2" style="width:55%;"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Free Dates -->
-        <div class="bg-white rounded-2xl p-6 sm:p-8 border border-rose-100 card-hover max-w-4xl w-full">
-          <div class="flex flex-col sm:flex-row gap-6">
-            <div class="sm:w-40 flex-shrink-0 text-center sm:text-left">
-              <a href="https://freedates.app/" target="_blank" class="text-lg sm:text-xl font-semibold text-gradient">Free Dates</a>
-              <div class="text-xs text-slate-500 mt-1">freedates.app</div>
-            </div>
-            <div class="flex-1 text-sm sm:text-base">
-              <ul class="space-y-3 text-gray-700 leading-relaxed">
-                <li class="flex items-start gap-2"><span class="mt-1">✓</span><span>Earn attention, not buy it — SMS only, no bots.</span></li>
-                <li class="flex items-start gap-2"><span class="mt-1">✓</span><span>Heart-based engagement, no ghosting.</span></li>
-              </ul>
-              <div class="mt-4">
-                <div class="flex justify-between text-xs text-gray-500 mb-1"><span>Idea</span><span>Prototype</span><span>Team</span><span>MVP</span><span>Go Live</span><span>First Client</span><span>Revenue</span></div>
-                <div class="flex w-full h-2 rounded overflow-hidden bg-gray-200">
-                  <div class="h-2" style="width:45%;background:linear-gradient(to right,#f87171,#e13030);"></div>
-                  <div class="bg-gray-300 h-2" style="width:55%;"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Buildless -->
-        <div class="bg-white rounded-2xl p-6 sm:p-8 border border-indigo-100 card-hover max-w-4xl w-full">
-          <div class="flex flex-col sm:flex-row gap-6">
-            <div class="sm:w-40 flex-shrink-0 text-center sm:text-left">
-              <a href="https://buildless.online/" target="_blank" class="text-lg sm:text-xl font-semibold text-gradient">Buildless</a>
-              <div class="text-xs text-slate-500 mt-1">buildless.online</div>
-            </div>
-            <div class="flex-1 text-sm sm:text-base">
-              <ul class="space-y-3 text-gray-700 leading-relaxed">
-                <li class="flex items-start gap-2"><span class="mt-1">✓</span><span>Build with JSON & JavaScript — no HTML needed.</span></li>
-                <li class="flex items-start gap-2"><span class="mt-1">✓</span><span>Auth & data built-in; real-time updates.</span></li>
-                <li class="flex items-start gap-2"><span class="mt-1">✓</span><span>No build tools or frameworks required.</span></li>
-              </ul>
-              <div class="mt-4">
-                <div class="flex justify-between text-xs text-gray-500 mb-1"><span>Idea</span><span>Prototype</span><span>Team</span><span>MVP</span><span>Go Live</span><span>First Client</span><span>Revenue</span></div>
-                <div class="flex w-full h-2 rounded overflow-hidden bg-gray-200">
-                  <div class="h-2" style="width:50%;background:linear-gradient(to right,#3b82f6,#8b5cf6);"></div>
-                  <div class="bg-gray-300 h-2" style="width:50%;"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div><!-- /stack -->
     </div>
   </section>
+
+  <div class="section-line mx-auto max-w-6xl"></div>
 
   <!-- FAQ -->
-  <section id="faq" class="mx-auto max-w-6xl px-4 py-12">
-    <h2 class="text-2xl md:text-3xl font-bold">FAQ</h2>
-    <div class="mt-6 space-y-3" id="faqList">
-      <details class="bg-white border border-slate-200 rounded-xl p-4">
-        <summary class="cursor-pointer font-semibold">Do you only work on software products?</summary>
-        <div class="mt-2 text-slate-600">Yes — web, mobile, and SaaS products only.</div>
+  <section id="faq" class="mx-auto max-w-6xl px-4 py-20">
+    <div class="text-center mb-14">
+      <span class="badge mb-4">FAQ</span>
+      <h2 class="text-3xl md:text-4xl font-bold text-white">Common Questions</h2>
+    </div>
+    <div class="max-w-3xl mx-auto space-y-3">
+      <details class="glass rounded-xl p-5 group">
+        <summary class="cursor-pointer font-semibold text-white flex items-center justify-between">Will AI replace my team?<span></span></summary>
+        <div class="mt-3 text-slate-400 leading-relaxed">No — and that's the whole point. AI is a force multiplier. I help your team use AI to handle repetitive work so they can focus on creative, strategic, and high-value tasks. People who learn to work with AI become <em>more</em> valuable, not less.</div>
       </details>
-      <details class="bg-white border border-slate-200 rounded-xl p-4">
-        <summary class="cursor-pointer font-semibold">Are you my partner or my advisor?</summary>
-        <div class="mt-2 text-slate-600">
-          By default I’m an <strong>advisor/mentor</strong> (not a partner). See <a href="#packages" class="text-sky-700 underline">Packages</a>. I consider <strong>selective co-founder partnerships</strong> — see <a href="#partnership" class="text-sky-700 underline">Partnering</a>.
-        </div>
+      <details class="glass rounded-xl p-5 group">
+        <summary class="cursor-pointer font-semibold text-white flex items-center justify-between">What kinds of businesses do you work with?<span></span></summary>
+        <div class="mt-3 text-slate-400 leading-relaxed">Any business ready to embrace AI — from startups building AI-first products to established companies modernising their operations. I've worked across SaaS, professional services, e-commerce, and more.</div>
       </details>
-      <details class="bg-white border border-slate-200 rounded-xl p-4">
-        <summary class="cursor-pointer font-semibold">Will you build the product?</summary>
-        <div class="mt-2 text-slate-600">
-          In advisory, I coach and lead delivery with your team (or help you source one). In a co-founder partnership, I organise the tech team and drive delivery with you.
-        </div>
+      <details class="glass rounded-xl p-5 group">
+        <summary class="cursor-pointer font-semibold text-white flex items-center justify-between">What AI tools and platforms do you work with?<span></span></summary>
+        <div class="mt-3 text-slate-400 leading-relaxed">I'm tool-agnostic and pick what's best for your situation — Claude, ChatGPT, Copilot, open-source models, automation platforms (Make, n8n, Zapier), custom-built agents, and more. The goal is the right solution, not a specific vendor.</div>
       </details>
-      <details class="bg-white border border-slate-200 rounded-xl p-4">
-        <summary class="cursor-pointer font-semibold">What tools & stack do you recommend?</summary>
-        <div class="mt-2 text-slate-600">
-          Modern web: React/TypeScript, Node, and managed backends (e.g., Firebase/GCP via a <em>Firestore service abstraction</em>, never directly). We’ll choose what fits speed and cost.
-        </div>
+      <details class="glass rounded-xl p-5 group">
+        <summary class="cursor-pointer font-semibold text-white flex items-center justify-between">Do you write code or just advise?<span></span></summary>
+        <div class="mt-3 text-slate-400 leading-relaxed">Both. I can advise your team strategically, coach them hands-on, <em>and</em> write production code — AI integrations, agent systems, automations, full-stack applications. Whatever the engagement needs.</div>
       </details>
-      <details class="bg-white border border-slate-200 rounded-xl p-4">
-        <summary class="cursor-pointer font-semibold">How do I contact you?</summary>
-        <div class="mt-2 text-slate-600">No email — please DM me on <a href="https://www.linkedin.com/in/sergeivo/" class="text-sky-700 underline">LinkedIn</a> or use the booking link.</div>
+      <details class="glass rounded-xl p-5 group">
+        <summary class="cursor-pointer font-semibold text-white flex items-center justify-between">How do I get started?<span></span></summary>
+        <div class="mt-3 text-slate-400 leading-relaxed">Book a free 20-minute discovery call or DM me on <a href="https://www.linkedin.com/in/sergeivo/" class="text-violet-400 hover:text-violet-300 underline">LinkedIn</a>. We'll discuss where you are, where you want to go, and whether I'm the right fit. No pressure, no email required.</div>
       </details>
     </div>
   </section>
 
+  <div class="section-line mx-auto max-w-6xl"></div>
+
   <!-- Contact -->
-  <section id="contact" class="mx-auto max-w-6xl px-4 py-12">
-    <div class="bg-white border border-slate-200 rounded-2xl p-6">
-      <h2 class="text-2xl md:text-3xl font-bold">Let’s talk about your product</h2>
-      <p class="mt-2 text-slate-600">Book a free 20-minute discovery call or DM me on LinkedIn. <strong>No email.</strong></p>
-      <div class="mt-5 flex flex-wrap gap-3">
-        <a href="https://calendar.app.google/5hsvLPKmr5MoQSKUA" class="px-5 py-3 bg-sky-600 text-white rounded-xl hover:bg-sky-700">Book a Call</a>
-        <a href="https://www.linkedin.com/in/sergeivo/" class="px-5 py-3 border border-slate-300 rounded-xl hover:bg-white" rel="noopener">LinkedIn</a>
+  <section id="contact" class="mx-auto max-w-6xl px-4 py-20">
+    <div class="relative overflow-hidden rounded-2xl" style="background: linear-gradient(135deg, rgba(124,58,237,0.1), rgba(59,130,246,0.1)); border: 1px solid rgba(124,58,237,0.2);">
+      <div class="absolute top-0 left-0 w-96 h-96 bg-violet-600/5 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 right-0 w-64 h-64 bg-blue-600/5 rounded-full blur-3xl"></div>
+      <div class="relative p-8 md:p-12 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white">Ready to Transform Your Business with AI?</h2>
+        <p class="mt-4 text-slate-400 text-lg max-w-xl mx-auto">Book a free 20-minute discovery call. Let's talk about your team, your operations, and what AI can do for you. <strong class="text-slate-300">No email required.</strong></p>
+        <div class="mt-8 flex flex-wrap gap-4 justify-center">
+          <a href="https://calendar.app.google/5hsvLPKmr5MoQSKUA" class="px-8 py-4 bg-gradient-to-r from-violet-600 to-blue-500 text-white rounded-xl font-bold text-lg hover:shadow-xl hover:shadow-violet-500/25 transition-all">Book a Call</a>
+          <a href="https://www.linkedin.com/in/sergeivo/" class="px-8 py-4 glass rounded-xl font-semibold text-slate-300 hover:text-white text-lg transition-all" rel="noopener">LinkedIn</a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="mx-auto max-w-6xl px-4 pb-10">
-    <div class="text-sm text-slate-500">
-      © 2025 Serge Ivo — Software Startup Coach & Motivational Speaker. All rights reserved.
-      <span class="block mt-1">Privacy: I only use anonymised analytics to improve the site.</span>
+  <footer class="mx-auto max-w-6xl px-4 py-10">
+    <div class="section-line mb-8"></div>
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-600">
+      <span>&copy; 2025 Serge Ivo — AI Transformation Leader. All rights reserved.</span>
+      <span>Privacy: I only use anonymised analytics to improve the site.</span>
     </div>
   </footer>
 
@@ -550,31 +707,30 @@
   {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "Serge Ivo — Software Startup Coach & Motivational Speaker",
-    "description": "Coaching for software founders: AI-assisted strategy, team formation, MVP sprints, and launch. Keynotes and workshops that inspire people to build.",
+    "name": "Serge Ivo — AI Transformation Leader",
+    "description": "AI transformation consulting, coaching, and implementation. Helping businesses build agent-led, AI-enabled workflows that empower their teams.",
     "areaServed": "Global",
     "url": "https://sergeivo.online/",
     "logo": "https://sergeivo.online/logo.png",
     "image": "https://sergeivo.online/og-image.jpg",
     "sameAs": [
-      "https://www.linkedin.com/in/sergeivo/",
-      "https://www.meetup.com/"
+      "https://www.linkedin.com/in/sergeivo/"
     ],
-    "serviceType": "Startup coaching",
+    "serviceType": "AI Transformation Consulting",
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "Packages (Weekly, No Lock-in)",
       "itemListElement": [
-        { "@type": "Offer", "name": "Advisor Lite — weekly", "priceCurrency": "AUD", "price": "150" },
-        { "@type": "Offer", "name": "Advisor Core — weekly", "priceCurrency": "AUD", "price": "390" },
-        { "@type": "Offer", "name": "Advisor Intensive — weekly", "priceCurrency": "AUD", "price": "890" },
-        { "@type": "Offer", "name": "Ad-hoc Coaching (60 min)", "priceCurrency": "AUD", "price": "150" }
+        { "@type": "Offer", "name": "AI Coach — weekly", "priceCurrency": "AUD", "price": "490" },
+        { "@type": "Offer", "name": "AI Builder — weekly", "priceCurrency": "AUD", "price": "990" },
+        { "@type": "Offer", "name": "AI Transformation — weekly", "priceCurrency": "AUD", "price": "1890" },
+        { "@type": "Offer", "name": "Ad-hoc Session (60 min)", "priceCurrency": "AUD", "price": "250" }
       ]
     },
     "provider": {
       "@type": "Person",
       "name": "Serge Ivo",
-      "jobTitle": "Software Startup Coach & Motivational Speaker",
+      "jobTitle": "AI Transformation Leader",
       "sameAs": ["https://www.linkedin.com/in/sergeivo/"]
     }
   }
